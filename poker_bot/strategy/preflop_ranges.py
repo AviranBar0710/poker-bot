@@ -16,6 +16,7 @@ from dataclasses import dataclass, field
 from enum import StrEnum
 from itertools import combinations
 
+from poker_bot.core.game_context import GameContext
 from poker_bot.utils.card import Card
 from poker_bot.utils.constants import Position, Rank, Suit
 
@@ -621,28 +622,102 @@ CALL_VS_RAISE_RANGES: dict[Position, Range] = {
 }
 
 
-def get_opening_range(position: Position) -> Range:
-    """Get the GTO opening range for a position.
+def get_opening_range(
+    position: Position,
+    context: GameContext | None = None,
+) -> Range:
+    """Get the opening range for a position, adjusted for game context.
+
+    When a GameContext is provided, the base GTO range is adjusted for
+    stack depth, tournament phase, and ICM considerations.
 
     Args:
         position: Player's table position.
+        context: Optional game context for situational adjustments.
 
     Returns:
         The opening range, or an empty Range if no open range exists.
     """
-    return OPENING_RANGES.get(position, Range())
+    from poker_bot.strategy.stack_strategy import (
+        adjust_range_for_stack,
+        get_push_fold_range,
+    )
+    from poker_bot.strategy.tournament_strategy import adjust_range_for_tournament
+
+    if context is None:
+        return OPENING_RANGES.get(position, Range())
+
+    # Push/fold territory overrides everything
+    if context.stack_category in ("very_short", "critical"):
+        pf_range = get_push_fold_range(context.stack_depth_bb, position)
+        if pf_range is not None:
+            if context.is_tournament:
+                return adjust_range_for_tournament(pf_range, context)
+            return pf_range
+
+    base = OPENING_RANGES.get(position, Range())
+    if not base.hands:
+        return base
+
+    # Apply stack-depth adjustments
+    adjusted = adjust_range_for_stack(base, context)
+
+    # Apply tournament adjustments (ICM, survival premium)
+    if context.is_tournament:
+        adjusted = adjust_range_for_tournament(adjusted, context)
+
+    return adjusted
 
 
-def get_3bet_range(position: Position) -> Range:
-    """Get the GTO 3-bet range for a position."""
-    return THREE_BET_RANGES.get(position, Range())
+def get_3bet_range(
+    position: Position,
+    context: GameContext | None = None,
+) -> Range:
+    """Get the 3-bet range for a position, adjusted for game context."""
+    from poker_bot.strategy.stack_strategy import adjust_range_for_stack
+    from poker_bot.strategy.tournament_strategy import adjust_range_for_tournament
+
+    base = THREE_BET_RANGES.get(position, Range())
+    if context is None or not base.hands:
+        return base
+
+    adjusted = adjust_range_for_stack(base, context)
+    if context.is_tournament:
+        adjusted = adjust_range_for_tournament(adjusted, context)
+    return adjusted
 
 
-def get_4bet_range(position: Position) -> Range:
-    """Get the GTO 4-bet range for a position."""
-    return FOUR_BET_RANGES.get(position, Range())
+def get_4bet_range(
+    position: Position,
+    context: GameContext | None = None,
+) -> Range:
+    """Get the 4-bet range for a position, adjusted for game context."""
+    from poker_bot.strategy.stack_strategy import adjust_range_for_stack
+    from poker_bot.strategy.tournament_strategy import adjust_range_for_tournament
+
+    base = FOUR_BET_RANGES.get(position, Range())
+    if context is None or not base.hands:
+        return base
+
+    adjusted = adjust_range_for_stack(base, context)
+    if context.is_tournament:
+        adjusted = adjust_range_for_tournament(adjusted, context)
+    return adjusted
 
 
-def get_call_vs_raise_range(position: Position) -> Range:
-    """Get the calling range vs a raise for a position."""
-    return CALL_VS_RAISE_RANGES.get(position, Range())
+def get_call_vs_raise_range(
+    position: Position,
+    context: GameContext | None = None,
+) -> Range:
+    """Get the calling range vs a raise, adjusted for game context."""
+    from poker_bot.strategy.stack_strategy import adjust_range_for_stack
+    from poker_bot.strategy.tournament_strategy import adjust_range_for_tournament
+
+    base = CALL_VS_RAISE_RANGES.get(position, Range())
+    if context is None or not base.hands:
+        return base
+
+    adjusted = adjust_range_for_stack(base, context)
+    if context.is_tournament:
+        adjusted = adjust_range_for_tournament(adjusted, context)
+    return adjusted
