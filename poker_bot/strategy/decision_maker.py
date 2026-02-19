@@ -935,7 +935,22 @@ class DecisionMaker:
     Usage:
         maker = DecisionMaker()
         decision = maker.make_decision(game_state, context, hero_index, action_history)
+
+    Optional solver injection for mixed-strategy GTO play:
+        from poker_bot.solver.engine import SolverEngine
+        maker = DecisionMaker(solver=SolverEngine())
+        result = maker.make_decision_detailed(game_state, context, hero_index, action_history)
     """
+
+    def __init__(self, solver=None) -> None:
+        """Initialize the decision maker.
+
+        Args:
+            solver: Optional SolverEngine instance. When provided and
+                    confident (>=0.5), solver output is used. Otherwise
+                    falls back to existing heuristic logic.
+        """
+        self._solver = solver
 
     def make_decision(
         self,
@@ -957,6 +972,68 @@ class DecisionMaker:
         Returns:
             Decision with action, amount, and reasoning.
         """
+        # Try solver first if available
+        if self._solver is not None:
+            solver_result = self._solver.solve(
+                game_state, context, hero_index,
+                action_history, opponent_range,
+            )
+            if solver_result.confidence >= 0.5:
+                decision = _solver_result_to_decision(solver_result)
+                hero = game_state.players[hero_index]
+                return _clamp_decision(
+                    decision, hero.chips, game_state.big_blind,
+                )
+
+        # Existing heuristic logic
+        return self._heuristic_decision(
+            game_state, context, hero_index, action_history, opponent_range,
+        )
+
+    def make_decision_detailed(
+        self,
+        game_state: GameState,
+        context: GameContext,
+        hero_index: int,
+        action_history: list[PriorAction] | None = None,
+        opponent_range: Range | None = None,
+    ):
+        """Produce a decision with full solver details.
+
+        Returns a SolverResult when solver is available, otherwise None
+        along with the standard Decision.
+
+        Returns:
+            Tuple of (Decision, SolverResult | None).
+        """
+        solver_result = None
+        if self._solver is not None:
+            solver_result = self._solver.solve(
+                game_state, context, hero_index,
+                action_history, opponent_range,
+            )
+            if solver_result.confidence >= 0.5:
+                decision = _solver_result_to_decision(solver_result)
+                hero = game_state.players[hero_index]
+                decision = _clamp_decision(
+                    decision, hero.chips, game_state.big_blind,
+                )
+                return decision, solver_result
+
+        decision = self._heuristic_decision(
+            game_state, context, hero_index, action_history, opponent_range,
+        )
+        return decision, solver_result
+
+    def _heuristic_decision(
+        self,
+        game_state: GameState,
+        context: GameContext,
+        hero_index: int,
+        action_history: list[PriorAction] | None = None,
+        opponent_range: Range | None = None,
+    ) -> Decision:
+        """Original heuristic decision logic."""
         hero = game_state.players[hero_index]
         action_history = action_history or []
 
@@ -1036,4 +1113,54 @@ def _clamp_decision(
         reasoning=decision.reasoning,
         equity=decision.equity,
         pot_odds=decision.pot_odds,
+    )
+
+
+def _solver_result_to_decision(solver_result) -> Decision:
+    """Convert a SolverResult to a Decision.
+
+    Takes the recommended (highest-frequency) action from the mixed
+    strategy and builds a Decision with reasoning that includes
+    the full strategy breakdown.
+    """
+    rec = solver_result.strategy.recommended_action
+    if rec is None:
+        return Decision(
+            action=ActionType.FOLD,
+            amount=0.0,
+            reasoning="Solver returned empty strategy",
+        )
+
+    # Map solver action strings to ActionType
+    action_map = {
+        "raise": ActionType.RAISE,
+        "call": ActionType.CALL,
+        "fold": ActionType.FOLD,
+        "check": ActionType.CHECK,
+        "all_in": ActionType.ALL_IN,
+    }
+    action = action_map.get(rec.action, ActionType.FOLD)
+
+    # Build reasoning with mixed strategy breakdown
+    strategy_parts = []
+    for af in solver_result.strategy.actions:
+        if af.frequency >= 0.01:
+            if af.amount > 0:
+                strategy_parts.append(
+                    f"{af.action} {af.frequency:.0%} ({af.amount:.1f}bb)"
+                )
+            else:
+                strategy_parts.append(f"{af.action} {af.frequency:.0%}")
+
+    strategy_str = ", ".join(strategy_parts)
+    reasoning = (
+        f"Solver ({solver_result.source}, "
+        f"confidence={solver_result.confidence:.0%}): {strategy_str}"
+    )
+
+    return Decision(
+        action=action,
+        amount=rec.amount,
+        reasoning=reasoning,
+        equity=max(0.0, solver_result.ev),
     )

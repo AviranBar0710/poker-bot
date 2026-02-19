@@ -51,6 +51,7 @@ from poker_bot.core.game_context import (
 from poker_bot.core.game_state import GameState, PlayerState
 from poker_bot.core.hand_evaluator import HandEvaluator
 from poker_bot.interface.opponent_tracker import OpponentTracker
+from poker_bot.solver.engine import SolverEngine
 from poker_bot.strategy.decision_maker import (
     ActionType,
     DecisionMaker,
@@ -311,6 +312,7 @@ def _print_recommendation(
     stack_bb: float,
     community_cards: list[Card],
     opponent_advice: str = "",
+    solver_result=None,
 ) -> None:
     """Print a formatted recommendation."""
     from poker_bot.strategy.decision_maker import Decision
@@ -334,6 +336,20 @@ def _print_recommendation(
     if community_cards:
         print(f"  Board:      {' '.join(str(c) for c in community_cards)}")
     print(f"  Stack:      {stack_bb:.1f} bb")
+
+    # Mixed strategy display from solver
+    if solver_result is not None:
+        print()
+        print("  -- GTO Mixed Strategy --")
+        print(f"  Source:     {solver_result.source} (confidence: {solver_result.confidence:.0%})")
+        if solver_result.ev != 0:
+            print(f"  EV:         {solver_result.ev:+.2f} bb")
+        for af in sorted(solver_result.strategy.actions, key=lambda a: -a.frequency):
+            if af.frequency >= 0.01:
+                if af.amount > 0:
+                    print(f"    {af.action:<8} {af.frequency:5.1%}  ({af.amount:.1f} bb)")
+                else:
+                    print(f"    {af.action:<8} {af.frequency:5.1%}")
 
     # Analysis section
     if decision.equity > 0 or decision.pot_odds > 0:
@@ -382,8 +398,10 @@ def _live_coaching(tracker: OpponentTracker) -> None:
     gs, ctx, hero_index, action_history = result
     hero = gs.players[hero_index]
 
-    maker = DecisionMaker()
-    decision = maker.make_decision(
+    # Use solver-enhanced decision maker
+    solver = SolverEngine()
+    maker = DecisionMaker(solver=solver)
+    decision, solver_result = maker.make_decision_detailed(
         gs, ctx, hero_index=hero_index, action_history=action_history,
     )
 
@@ -404,6 +422,7 @@ def _live_coaching(tracker: OpponentTracker) -> None:
         ctx.stack_depth_bb,
         gs.community_cards,
         opponent_advice,
+        solver_result=solver_result,
     )
 
 

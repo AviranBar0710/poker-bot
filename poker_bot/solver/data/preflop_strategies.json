@@ -1,0 +1,6400 @@
+{
+  "UTG": {
+    "open": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "99": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "88": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "77": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "ATs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KTs": [
+        {
+          "action": "raise",
+          "frequency": 0.6461538461538462,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3538461538461538,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJs": [
+        {
+          "action": "raise",
+          "frequency": 0.6461538461538462,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3538461538461538,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTs": [
+        {
+          "action": "raise",
+          "frequency": 0.6153846153846154,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3846153846153846,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTs": [
+        {
+          "action": "raise",
+          "frequency": 0.5846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.41538461538461535,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4769230769230769,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98s": [
+        {
+          "action": "raise",
+          "frequency": 0.4615384615384615,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615385,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.42307692307692313,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4461538461538461,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_raise": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.30000000000000004,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ]
+    },
+    "vs_3bet": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 0.7692307692307693,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.23076923076923073,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ]
+    }
+  },
+  "MP": {
+    "open": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "99": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "88": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "77": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "66": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "ATs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QJs": [
+        {
+          "action": "raise",
+          "frequency": 0.6461538461538462,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3538461538461538,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTs": [
+        {
+          "action": "raise",
+          "frequency": 0.6153846153846154,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3846153846153846,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q9s": [
+        {
+          "action": "raise",
+          "frequency": 0.5846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.41538461538461535,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTs": [
+        {
+          "action": "raise",
+          "frequency": 0.5846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.41538461538461535,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J9s": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4461538461538461,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4769230769230769,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T8s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5076923076923077,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98s": [
+        {
+          "action": "raise",
+          "frequency": 0.4615384615384615,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615385,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "76s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.42307692307692313,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4461538461538461,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATo": [
+        {
+          "action": "raise",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.49230769230769234,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_raise": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.30000000000000004,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "99": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "TT": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AJs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AQo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "88": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "77": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "66": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_3bet": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.5076923076923077,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ]
+    }
+  },
+  "CO": {
+    "open": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "99": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "88": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "77": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "66": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "55": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "ATs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A2s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J9s": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4461538461538461,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J8s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4769230769230769,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4769230769230769,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T8s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5076923076923077,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98s": [
+        {
+          "action": "raise",
+          "frequency": 0.4615384615384615,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615385,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "97s": [
+        {
+          "action": "raise",
+          "frequency": 0.4307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5692307692307692,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "86s": [
+        {
+          "action": "raise",
+          "frequency": 0.36923076923076925,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6307692307692307,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "76s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "75s": [
+        {
+          "action": "raise",
+          "frequency": 0.3076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "65s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "54s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.42307692307692313,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4461538461538461,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATo": [
+        {
+          "action": "raise",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.49230769230769234,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9o": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.49230769230769234,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KTo": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJo": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTo": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_raise": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.30000000000000004,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.30000000000000004,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.4461538461538461,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AJo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "76s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "65s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "99": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "86s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "55": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "77": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "66": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "97s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "88": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_3bet": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 0.7384615384615385,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2615384615384615,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.5076923076923077,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ]
+    }
+  },
+  "BTN": {
+    "open": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "99": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "88": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "77": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "66": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "55": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "44": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "33": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "22": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "ATs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A2s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "T9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "T8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "T7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "98s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "97s": [
+        {
+          "action": "raise",
+          "frequency": 0.4307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5692307692307692,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "96s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "86s": [
+        {
+          "action": "raise",
+          "frequency": 0.36923076923076925,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6307692307692307,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "76s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "75s": [
+        {
+          "action": "raise",
+          "frequency": 0.3076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "65s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "64s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "54s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "53s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "43s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.42307692307692313,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4461538461538461,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATo": [
+        {
+          "action": "raise",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.49230769230769234,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9o": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A8o": [
+        {
+          "action": "raise",
+          "frequency": 0.46153846153846156,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615384,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A7o": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A6o": [
+        {
+          "action": "raise",
+          "frequency": 0.41538461538461535,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5846153846153846,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A5o": [
+        {
+          "action": "raise",
+          "frequency": 0.3923076923076923,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6076923076923078,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A4o": [
+        {
+          "action": "raise",
+          "frequency": 0.36923076923076925,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6307692307692307,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A3o": [
+        {
+          "action": "raise",
+          "frequency": 0.3461538461538461,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.653846153846154,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A2o": [
+        {
+          "action": "raise",
+          "frequency": 0.32307692307692304,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.676923076923077,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.49230769230769234,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KTo": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K9o": [
+        {
+          "action": "raise",
+          "frequency": 0.46153846153846156,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615384,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJo": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTo": [
+        {
+          "action": "raise",
+          "frequency": 0.46153846153846156,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615384,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q9o": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTo": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J9o": [
+        {
+          "action": "raise",
+          "frequency": 0.41538461538461535,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5846153846153846,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9o": [
+        {
+          "action": "raise",
+          "frequency": 0.3923076923076923,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6076923076923078,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_raise": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "ATs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.30000000000000004,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "KJs": [
+        {
+          "action": "raise",
+          "frequency": 0.676923076923077,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.32307692307692304,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "QJs": [
+        {
+          "action": "raise",
+          "frequency": 0.6461538461538462,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.3538461538461538,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "76s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.6615384615384615,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "65s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.7,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "54s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.7,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.4461538461538461,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AJo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "99": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "86s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A7s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "64s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "55": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "77": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "66": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "97s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "44": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "88": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "75s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A6s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_3bet": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.5076923076923077,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 0.4615384615384615,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.5384615384615385,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ]
+    }
+  },
+  "SB": {
+    "open": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "99": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "88": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "77": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "66": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "55": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "44": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "33": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "22": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "ATs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "A2s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "KTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K3s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "K2s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "QTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "Q5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "JTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "J6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "T9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "T8s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "T7s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "T6s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 2.5,
+          "ev": 0.5
+        }
+      ],
+      "98s": [
+        {
+          "action": "raise",
+          "frequency": 0.4615384615384615,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615385,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "97s": [
+        {
+          "action": "raise",
+          "frequency": 0.4307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5692307692307692,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "96s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "86s": [
+        {
+          "action": "raise",
+          "frequency": 0.36923076923076925,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6307692307692307,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "85s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "76s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "75s": [
+        {
+          "action": "raise",
+          "frequency": 0.3076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "65s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "64s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "54s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "53s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "43s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.42307692307692313,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.4461538461538461,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "AJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATo": [
+        {
+          "action": "raise",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.49230769230769234,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9o": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A8o": [
+        {
+          "action": "raise",
+          "frequency": 0.46153846153846156,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615384,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A7o": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A6o": [
+        {
+          "action": "raise",
+          "frequency": 0.41538461538461535,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5846153846153846,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A5o": [
+        {
+          "action": "raise",
+          "frequency": 0.3923076923076923,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6076923076923078,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A4o": [
+        {
+          "action": "raise",
+          "frequency": 0.36923076923076925,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6307692307692307,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.46923076923076923,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5076923076923077,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.49230769230769234,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KTo": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K9o": [
+        {
+          "action": "raise",
+          "frequency": 0.46153846153846156,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615384,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K8o": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJo": [
+        {
+          "action": "raise",
+          "frequency": 0.4846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5153846153846153,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTo": [
+        {
+          "action": "raise",
+          "frequency": 0.46153846153846156,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5384615384615384,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q9o": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTo": [
+        {
+          "action": "raise",
+          "frequency": 0.4384615384615384,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5615384615384615,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J9o": [
+        {
+          "action": "raise",
+          "frequency": 0.41538461538461535,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.5846153846153846,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9o": [
+        {
+          "action": "raise",
+          "frequency": 0.3923076923076923,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.6076923076923078,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98o": [
+        {
+          "action": "raise",
+          "frequency": 0.3461538461538461,
+          "amount": 2.5,
+          "ev": 0.2
+        },
+        {
+          "action": "fold",
+          "frequency": 0.653846153846154,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_raise": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "99": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "ATs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A9s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A2s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KTs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "QJs": [
+        {
+          "action": "raise",
+          "frequency": 0.6461538461538462,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.3538461538461538,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "QTs": [
+        {
+          "action": "raise",
+          "frequency": 0.6153846153846154,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.3846153846153846,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "JTs": [
+        {
+          "action": "raise",
+          "frequency": 0.5846153846153846,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.41538461538461535,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "T9s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "98s": [
+        {
+          "action": "raise",
+          "frequency": 0.4615384615384615,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.5384615384615385,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "87s": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.6,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "76s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.6615384615384615,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "65s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.7,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "54s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.7,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.4461538461538461,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AJo": [
+        {
+          "action": "raise",
+          "frequency": 0.5307692307692308,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.46923076923076923,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ]
+    },
+    "vs_3bet": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 0.7384615384615385,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2615384615384615,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.5076923076923077,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ]
+    }
+  },
+  "BB": {
+    "vs_raise": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "JJ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "TT": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AQs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "AJs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 7.5,
+          "ev": 1.0
+        }
+      ],
+      "A3s": [
+        {
+          "action": "raise",
+          "frequency": 0.4615384615384615,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.5384615384615385,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "KQs": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.30000000000000004,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "76s": [
+        {
+          "action": "raise",
+          "frequency": 0.3384615384615385,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.6615384615384615,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "65s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.7,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "54s": [
+        {
+          "action": "raise",
+          "frequency": 0.3,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.7,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AQo": [
+        {
+          "action": "raise",
+          "frequency": 0.5538461538461539,
+          "amount": 7.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.4461538461538461,
+          "amount": 2.5,
+          "ev": 0.2
+        }
+      ],
+      "AJo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A7o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K7s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A8o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K5s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "96s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J9o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K9o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "99": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "86s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A5o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A7s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "64s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A2s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q7s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "55": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "22": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "77": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QJs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "66": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T8o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "33": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K6s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T7s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KTo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "97s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "98s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "JTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "44": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "88": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A6o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q9o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J7s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KJo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "87s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "J8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "75s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "T9o": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "ATo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KTs": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "53s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "KQo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "85s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "QTo": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "A6s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "K8s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "43s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "Q9s": [
+        {
+          "action": "call",
+          "frequency": 0.9,
+          "amount": 2.5,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "vs_3bet": {
+      "AA": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "KK": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "QQ": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "AKs": [
+        {
+          "action": "raise",
+          "frequency": 1.0,
+          "amount": 22.0,
+          "ev": 2.0
+        }
+      ],
+      "A5s": [
+        {
+          "action": "raise",
+          "frequency": 0.5230769230769231,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.4769230769230769,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "A4s": [
+        {
+          "action": "raise",
+          "frequency": 0.49230769230769234,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.5076923076923077,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ],
+      "AKo": [
+        {
+          "action": "raise",
+          "frequency": 0.5769230769230769,
+          "amount": 22.0,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.42307692307692313,
+          "amount": 7.5,
+          "ev": 0.3
+        }
+      ]
+    }
+  }
+}

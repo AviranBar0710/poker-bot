@@ -1,0 +1,6482 @@
+{
+  "dry_high_rainbow": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.495,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.396,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.33,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.495,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.33,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.33,
+          "ev": -0.4
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.33,
+          "ev": -0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.33,
+          "ev": -0.4
+        }
+      ]
+    }
+  },
+  "dry_low_rainbow": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.495,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.396,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.33,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.495,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.33,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    }
+  },
+  "dry_medium": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.495,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.396,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.33,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.495,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.33,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    }
+  },
+  "wet_connected": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.99,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.792,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.66,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.99,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.66,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ]
+    }
+  },
+  "wet_two_tone": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.99,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.792,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.66,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.99,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.66,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ]
+    }
+  },
+  "monotone_high": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 1.125,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.75,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.75,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.8999999999999999,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.75,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.75,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.75,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.75,
+          "ev": 0.3
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.75,
+          "ev": 0.3
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.75,
+          "ev": -0.2
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.75,
+          "ev": -0.2
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.75,
+          "ev": -0.2
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 1.125,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.75,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.75,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.6000000000000001,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.6000000000000001,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.75,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.75,
+          "ev": -0.5
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.75,
+          "ev": -0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.75,
+          "ev": -0.5
+        }
+      ]
+    }
+  },
+  "monotone_low": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 1.125,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.75,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.75,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.8999999999999999,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.75,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.75,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.75,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.75,
+          "ev": 0.3
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.75,
+          "ev": 0.3
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.75,
+          "ev": -0.2
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.75,
+          "ev": -0.2
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.75,
+          "ev": -0.2
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 1.125,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.75,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.75,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.6000000000000001,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.6000000000000001,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.75,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.75,
+          "ev": -0.5
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.75,
+          "ev": -0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.75,
+          "ev": -0.5
+        }
+      ]
+    }
+  },
+  "paired_high": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.495,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.396,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.33,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.495,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.33,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.33,
+          "ev": -0.4
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.33,
+          "ev": -0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.33,
+          "ev": -0.4
+        }
+      ]
+    }
+  },
+  "paired_low": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.495,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.33,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.396,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.33,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.33,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.264,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.165,
+          "ev": -0.1
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.495,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.33,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.264,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.33,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.33,
+          "ev": -0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    }
+  },
+  "broadway_heavy": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.75,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.5,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.5,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.12,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.08,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.6,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.5,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.65,
+          "amount": 0.5,
+          "ev": 1.2
+        },
+        {
+          "action": "call",
+          "frequency": 0.22,
+          "amount": 0.0,
+          "ev": 0.7
+        },
+        {
+          "action": "check",
+          "frequency": 0.13,
+          "amount": 0.0,
+          "ev": 0.4
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.5,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.4,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.4,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.25,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.25,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.55,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.25,
+          "ev": -0.1
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.75,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.5,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.5,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.4,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.4,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.5,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.5,
+          "ev": -0.4
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.5,
+          "ev": -0.4
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.6,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.15,
+          "amount": 0.5,
+          "ev": -0.4
+        }
+      ]
+    }
+  },
+  "connected_low": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.99,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.792,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.66,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.99,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.66,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ]
+    }
+  },
+  "dynamic": {
+    "nuts": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.9,
+          "amount": 0.99,
+          "ev": 3.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 2.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.85,
+          "amount": 0.66,
+          "ev": 2.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 1.5
+        },
+        {
+          "action": "check",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 1.0
+        }
+      ]
+    },
+    "strong_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.8,
+          "amount": 0.792,
+          "ev": 2.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 1.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.7,
+          "amount": 0.66,
+          "ev": 1.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.8
+        },
+        {
+          "action": "check",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.5
+        }
+      ]
+    },
+    "medium_made": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.4,
+          "amount": 0.66,
+          "ev": 0.5
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.35,
+          "amount": 0.528,
+          "ev": 0.4
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.3
+        },
+        {
+          "action": "check",
+          "frequency": 0.25,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ]
+    },
+    "weak_made": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.45,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": -0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.05,
+          "amount": 0.66,
+          "ev": -0.2
+        }
+      ]
+    },
+    "strong_draw": {
+      "low": [
+        {
+          "action": "raise",
+          "frequency": 0.6,
+          "amount": 0.99,
+          "ev": 1.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.3,
+          "amount": 0.0,
+          "ev": 0.5
+        },
+        {
+          "action": "fold",
+          "frequency": 0.1,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "raise",
+          "frequency": 0.5,
+          "amount": 0.66,
+          "ev": 0.8
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.4
+        },
+        {
+          "action": "check",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": 0.1
+        }
+      ]
+    },
+    "medium_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.1
+        },
+        {
+          "action": "raise",
+          "frequency": 0.2,
+          "amount": 0.528,
+          "ev": 0.1
+        },
+        {
+          "action": "fold",
+          "frequency": 0.05,
+          "amount": 0.0,
+          "ev": 0.0
+        }
+      ],
+      "high": [
+        {
+          "action": "call",
+          "frequency": 0.4,
+          "amount": 0.0,
+          "ev": 0.2
+        },
+        {
+          "action": "check",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.25,
+          "amount": 0.66,
+          "ev": 0.3
+        }
+      ]
+    },
+    "weak_draw": {
+      "low": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "medium": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ],
+      "high": [
+        {
+          "action": "check",
+          "frequency": 0.5,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "fold",
+          "frequency": 0.35,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "call",
+          "frequency": 0.15,
+          "amount": 0.0,
+          "ev": -0.1
+        }
+      ]
+    },
+    "air": {
+      "low": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "medium": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ],
+      "high": [
+        {
+          "action": "fold",
+          "frequency": 0.7,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "check",
+          "frequency": 0.2,
+          "amount": 0.0,
+          "ev": 0.0
+        },
+        {
+          "action": "raise",
+          "frequency": 0.1,
+          "amount": 0.66,
+          "ev": -0.5
+        }
+      ]
+    }
+  }
+}
