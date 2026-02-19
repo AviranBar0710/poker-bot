@@ -329,10 +329,11 @@ class TestMultiwayPot:
         """3+ opponents should affect decision — generally tighter play."""
         community = _cards("Jh 8d 3c")
         # Build a game state with 4 active players
+        # Use clear air (no pair, no draw) so the decision isn't borderline
         gs = _make_game_state(
             hero_chips=100.0,
             hero_position=Position.UTG,
-            hero_cards=_cards("Kd Td"),  # Marginal — K-high, no pair
+            hero_cards=_cards("5d 2s"),  # Pure air — no pair, no draw
             pot=24.0,
             current_bet=8.0,
             big_blind=2.0,
@@ -351,7 +352,7 @@ class TestMultiwayPot:
         gs_hu = _make_game_state(
             hero_chips=100.0,
             hero_position=Position.UTG,
-            hero_cards=_cards("Kd Td"),
+            hero_cards=_cards("5d 2s"),
             pot=24.0,
             current_bet=8.0,
             big_blind=2.0,

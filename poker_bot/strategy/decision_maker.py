@@ -940,15 +940,19 @@ class DecisionMaker:
         from poker_bot.solver.engine import SolverEngine
         maker = DecisionMaker(solver=SolverEngine())
         result = maker.make_decision_detailed(game_state, context, hero_index, action_history)
+
+    Any backend implementing SolverProtocol can be injected:
+        from poker_bot.solver.data_structures import SolverProtocol
+        # PioSolverEngine, LLMSolverEngine, etc.
     """
 
-    def __init__(self, solver=None) -> None:
+    def __init__(self, solver: "SolverProtocol | None" = None) -> None:
         """Initialize the decision maker.
 
         Args:
-            solver: Optional SolverEngine instance. When provided and
-                    confident (>=0.5), solver output is used. Otherwise
-                    falls back to existing heuristic logic.
+            solver: Optional solver implementing SolverProtocol. When
+                    provided and confident (>=0.5), solver output is used.
+                    Otherwise falls back to existing heuristic logic.
         """
         self._solver = solver
 

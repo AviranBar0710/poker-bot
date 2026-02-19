@@ -4,12 +4,20 @@ ActionFrequency: A single action with its frequency, amount, and EV.
 StrategyNode: A collection of action frequencies forming a mixed strategy.
 SolverResult: Complete solver output with strategy, source, and confidence.
 SpotKey: Hashable identifier for a specific game situation.
+SolverProtocol: Interface that any solver backend must implement.
 """
 
 from __future__ import annotations
 
 import random
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING, Protocol, runtime_checkable
+
+if TYPE_CHECKING:
+    from poker_bot.core.game_context import GameContext
+    from poker_bot.core.game_state import GameState
+    from poker_bot.strategy.decision_maker import PriorAction
+    from poker_bot.strategy.preflop_ranges import Range
 
 
 @dataclass(frozen=True)
@@ -139,3 +147,25 @@ class SolverResult:
     confidence: float
     ev: float = 0.0
     spot_key: SpotKey | None = None
+
+
+@runtime_checkable
+class SolverProtocol(Protocol):
+    """Interface that any solver backend must implement.
+
+    Implementations include the built-in SolverEngine (hybrid lookup +
+    heuristic), and future backends like PioSolverEngine or LLMSolverEngine.
+
+    Usage:
+        def make_decision(solver: SolverProtocol, ...):
+            result = solver.solve(game_state, context, hero_index)
+    """
+
+    def solve(
+        self,
+        game_state: GameState,
+        context: GameContext,
+        hero_index: int,
+        action_history: list[PriorAction] | None = None,
+        opponent_range: Range | None = None,
+    ) -> SolverResult: ...

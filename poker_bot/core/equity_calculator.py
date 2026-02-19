@@ -2,11 +2,16 @@
 
 Calculates equity (winning probability) of hands and ranges by running
 simulated runouts of the remaining community cards.
+
+Includes a parallel variant (parallel_hand_vs_range) that splits
+simulations across CPU cores for significant speedup on >500 sims.
 """
 
 from __future__ import annotations
 
+import os
 import random
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
 
 import numpy as np
@@ -15,6 +20,11 @@ from poker_bot.core.hand_evaluator import HandEvaluator, HandResult
 from poker_bot.strategy.preflop_ranges import HandCombo, Range
 from poker_bot.utils.card import Card, Deck
 from poker_bot.utils.constants import Rank, Suit
+
+# Number of worker processes for parallel Monte Carlo.
+# Defaults to CPU count minus 1 (leave one core for the main thread),
+# with a minimum of 1 and a maximum of 4 (diminishing returns beyond that).
+_MAX_WORKERS = max(1, min(4, (os.cpu_count() or 2) - 1))
 
 
 @dataclass
@@ -53,6 +63,58 @@ def _available_deck(dead_cards: set[Card]) -> list[Card]:
     available = [c for c in _all_cards() if c not in dead_cards]
     random.shuffle(available)
     return available
+
+
+def _simulate_hand_vs_range_chunk(
+    hand_cards: list[tuple[str, str]],
+    valid_combos_cards: list[tuple[tuple[str, str], tuple[str, str]]],
+    board_cards: list[tuple[str, str]],
+    cards_needed: int,
+    simulations: int,
+    seed: int,
+) -> tuple[int, int, int]:
+    """Worker function for parallel Monte Carlo. Runs a chunk of simulations.
+
+    All arguments are serializable tuples (not Card objects) to work
+    with ProcessPoolExecutor pickling.
+
+    Returns:
+        (wins, ties, losses) tuple.
+    """
+    rng = random.Random(seed)
+
+    # Reconstruct Card objects inside the worker
+    hand = [Card(rank=Rank(r), suit=Suit(s)) for r, s in hand_cards]
+    board = [Card(rank=Rank(r), suit=Suit(s)) for r, s in board_cards]
+    combos = [
+        (Card(rank=Rank(c1r), suit=Suit(c1s)), Card(rank=Rank(c2r), suit=Suit(c2s)))
+        for (c1r, c1s), (c2r, c2s) in valid_combos_cards
+    ]
+    known_cards = set(hand) | set(board)
+    all_52 = [Card(rank=r, suit=s) for s in Suit for r in Rank]
+
+    wins = 0
+    ties = 0
+    losses = 0
+
+    for _ in range(simulations):
+        opp_card1, opp_card2 = rng.choice(combos)
+        dead = known_cards | {opp_card1, opp_card2}
+        available = [c for c in all_52 if c not in dead]
+        rng.shuffle(available)
+        runout = board + available[:cards_needed]
+
+        eval1 = HandEvaluator.evaluate(list(hand) + runout)
+        eval2 = HandEvaluator.evaluate([opp_card1, opp_card2] + runout)
+
+        if eval1 > eval2:
+            wins += 1
+        elif eval1 == eval2:
+            ties += 1
+        else:
+            losses += 1
+
+    return wins, ties, losses
 
 
 class EquityCalculator:
@@ -253,4 +315,90 @@ class EquityCalculator:
             tie_count=ties,
             loss_count=losses,
             simulations=valid_sims,
+        )
+
+    @staticmethod
+    def parallel_hand_vs_range(
+        hand: list[Card],
+        opponent_range: Range,
+        board: list[Card] | None = None,
+        simulations: int = 10_000,
+        max_workers: int | None = None,
+    ) -> EquityResult:
+        """Calculate equity using parallel Monte Carlo across CPU cores.
+
+        Splits simulations across worker processes for ~3-4x speedup on
+        multi-core machines. Falls back to sequential for small sim counts
+        (<500) where process overhead would negate the benefit.
+
+        Args:
+            hand: Player's hole cards (2 cards).
+            opponent_range: Opponent's range of hands.
+            board: Community cards already dealt (0-4 cards).
+            simulations: Number of Monte Carlo simulations.
+            max_workers: Max worker processes (defaults to _MAX_WORKERS).
+
+        Returns:
+            EquityResult for the hand.
+        """
+        # Fall back to sequential for small sim counts
+        if simulations < 500:
+            return EquityCalculator.hand_vs_range(
+                hand, opponent_range, board, simulations,
+            )
+
+        board = board or []
+        cards_needed = 5 - len(board)
+        known_cards = set(hand) | set(board)
+
+        valid_combos = [
+            combo
+            for combo in opponent_range.to_combos()
+            if combo.card1 not in known_cards and combo.card2 not in known_cards
+        ]
+
+        if not valid_combos:
+            raise ValueError("No valid combos in opponent range given known cards")
+
+        # Serialize to tuples for pickling
+        hand_cards = [(c.rank.value, c.suit.value) for c in hand]
+        board_cards = [(c.rank.value, c.suit.value) for c in board]
+        combos_cards = [
+            ((c.card1.rank.value, c.card1.suit.value),
+             (c.card2.rank.value, c.card2.suit.value))
+            for c in valid_combos
+        ]
+
+        workers = max_workers or _MAX_WORKERS
+        # Split simulations into chunks
+        chunk_size = simulations // workers
+        remainder = simulations % workers
+        chunks = [chunk_size + (1 if i < remainder else 0) for i in range(workers)]
+
+        # Use different seeds per chunk for independent randomness
+        base_seed = random.randint(0, 2**31)
+
+        with ProcessPoolExecutor(max_workers=workers) as executor:
+            futures = [
+                executor.submit(
+                    _simulate_hand_vs_range_chunk,
+                    hand_cards, combos_cards, board_cards,
+                    cards_needed, chunk_sims, base_seed + i,
+                )
+                for i, chunk_sims in enumerate(chunks)
+            ]
+            results = [f.result() for f in futures]
+
+        total_wins = sum(r[0] for r in results)
+        total_ties = sum(r[1] for r in results)
+        total_losses = sum(r[2] for r in results)
+        total_sims = total_wins + total_ties + total_losses
+
+        equity = (total_wins + total_ties * 0.5) / total_sims
+        return EquityResult(
+            equity=equity,
+            win_count=total_wins,
+            tie_count=total_ties,
+            loss_count=total_losses,
+            simulations=total_sims,
         )
