@@ -107,6 +107,11 @@ class PostflopSolver:
             with open(path) as f:
                 self._data = json.load(f)
 
+    # Postflop action order: SB, BB act first; then UTG, MP, CO, BTN last
+    _POSTFLOP_ORDER: dict[str, int] = {
+        "SB": 0, "BB": 1, "UTG": 2, "MP": 3, "CO": 4, "BTN": 5,
+    }
+
     def get_strategy(
         self,
         hero_cards: list[Card],
@@ -120,6 +125,8 @@ class PostflopSolver:
         has_draw: bool = False,
         draw_strength: float = 0.0,
         opponent_range: Range | None = None,
+        num_opponents: int = 1,
+        is_ip: bool = True,
     ) -> SolverResult:
         """Get a mixed strategy for a postflop spot.
 
@@ -135,6 +142,8 @@ class PostflopSolver:
             has_draw: Whether hero has a significant draw.
             draw_strength: Draw strength [0, 1].
             opponent_range: Optional explicit opponent range.
+            num_opponents: Number of opponents still in the hand (default 1).
+            is_ip: Whether hero is in position (acts last) (default True).
 
         Returns:
             SolverResult with mixed strategy.
@@ -166,6 +175,9 @@ class PostflopSolver:
         if node is not None:
             # Convert sizing fractions to actual amounts
             node = self._resolve_amounts(node, pot, hero_stack, big_blind, board_bucket)
+            node = self._apply_position_adjustment(node, is_ip, hand_category)
+            if num_opponents >= 2:
+                node = self._apply_multiway_adjustment(node, num_opponents, hand_category)
             return SolverResult(
                 strategy=node,
                 source="postflop_lookup",
@@ -190,6 +202,10 @@ class PostflopSolver:
                 confidence = 0.70
             except ValueError:
                 pass
+
+        node = self._apply_position_adjustment(node, is_ip, hand_category)
+        if num_opponents >= 2:
+            node = self._apply_multiway_adjustment(node, num_opponents, hand_category)
 
         return SolverResult(
             strategy=node,
@@ -283,14 +299,92 @@ class PostflopSolver:
         return StrategyNode(actions=resolved)
 
     @staticmethod
+    def _is_in_position(hero_position: str, villain_positions: list[str]) -> bool:
+        """Determine if hero acts last (is in position) among active players.
+
+        Postflop action order: SB(0), BB(1), UTG(2), MP(3), CO(4), BTN(5).
+        Hero is IP if their order value is the highest among all active players.
+        """
+        order = PostflopSolver._POSTFLOP_ORDER
+        hero_order = order.get(hero_position, 0)
+        for vp in villain_positions:
+            if order.get(vp, 0) > hero_order:
+                return False
+        return True
+
+    @staticmethod
+    def _apply_position_adjustment(
+        node: StrategyNode, is_ip: bool, hand_category: str,
+    ) -> StrategyNode:
+        """Apply IP/OOP multipliers to strategy frequencies and sizing."""
+        adjusted = []
+        for af in node.actions:
+            freq = af.frequency
+            amount = af.amount
+
+            if is_ip:
+                if af.action == "raise":
+                    freq *= 1.15
+                    amount *= 0.85
+                    if hand_category == "air":
+                        freq *= 1.20
+                elif af.action == "check":
+                    freq *= 0.80
+                # call and fold unchanged IP
+            else:
+                # OOP
+                if af.action == "check":
+                    freq *= 1.20
+                elif af.action == "raise":
+                    freq *= 0.85
+                    amount *= 1.15
+                elif af.action == "fold":
+                    freq *= 1.10
+
+            adjusted.append(ActionFrequency(af.action, freq, amount, af.ev))
+
+        return StrategyNode(actions=adjusted).normalized()
+
+    @staticmethod
+    def _apply_multiway_adjustment(
+        node: StrategyNode, num_opponents: int, hand_category: str,
+    ) -> StrategyNode:
+        """Apply multiway pot multipliers (num_opponents >= 2)."""
+        raise_mult = 1.0 / (num_opponents ** 0.3)
+        fold_mult = 1.0 + 0.15 * (num_opponents - 1)
+        bluff_raise_mult = 1.0 / (num_opponents ** 0.5)
+
+        adjusted = []
+        for af in node.actions:
+            freq = af.frequency
+            amount = af.amount
+
+            if af.action == "raise":
+                if hand_category == "air":
+                    freq *= bluff_raise_mult
+                else:
+                    freq *= raise_mult
+                amount *= 0.85
+            elif af.action == "fold":
+                freq *= fold_mult
+            # call unchanged
+
+            adjusted.append(ActionFrequency(af.action, freq, amount, af.ev))
+
+        return StrategyNode(actions=adjusted).normalized()
+
+    @staticmethod
     def _monte_carlo_equity(
         hero_cards: list[Card],
         community_cards: list[Card],
         opponent_range: Range,
         simulations: int = 1500,
     ) -> float:
-        """Run Monte Carlo equity calculation."""
-        result = EquityCalculator.hand_vs_range(
+        """Run Monte Carlo equity calculation.
+
+        Uses parallel simulation for larger sim counts (>500).
+        """
+        result = EquityCalculator.parallel_hand_vs_range(
             hero_cards, opponent_range,
             board=community_cards,
             simulations=simulations,

@@ -73,6 +73,4 @@ For changes to the decision engine, follow the 5-step pipeline in `.claude/workf
 
 - `models/` (opponent modeling) is stubbed — not yet implemented
 - No pure bluffing or trapping/slow-play logic in PostflopEngine
-- Position is not used in post-flop decisions (IP vs OOP not differentiated)
-- `num_opponents` is passed but unused in multiway pot adjustments
 - `Range.contains()` is O(n*m) per check — no combo caching yet
