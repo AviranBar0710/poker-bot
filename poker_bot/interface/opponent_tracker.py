@@ -1,19 +1,62 @@
 """Persistent opponent notes and statistics tracker.
 
-Stores opponent data in ~/.poker_coach/opponents.json so it
-survives across sessions. Provides tendencies-based advice for
-adjusting play against known opponents.
+Stores opponent data in a SQLite database (~/.poker_coach/opponents.db)
+with WAL mode for concurrent-safe reads/writes. An in-memory cache
+keeps lookups O(1) during gameplay.
+
+Migrates automatically from the legacy JSON format on first run.
 """
 
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass, field
+import sqlite3
+from dataclasses import dataclass, field
 from pathlib import Path
 
 
 _DATA_DIR = Path.home() / ".poker_coach"
-_DATA_FILE = _DATA_DIR / "opponents.json"
+_DB_FILE = _DATA_DIR / "opponents.db"
+_LEGACY_JSON = _DATA_DIR / "opponents.json"
+
+_CREATE_STATS_TABLE = """\
+CREATE TABLE IF NOT EXISTS opponent_stats (
+    name               TEXT PRIMARY KEY,
+    hands_seen         INTEGER NOT NULL DEFAULT 0,
+    vpip_count         INTEGER NOT NULL DEFAULT 0,
+    pfr_count          INTEGER NOT NULL DEFAULT 0,
+    three_bet_count    INTEGER NOT NULL DEFAULT 0,
+    aggression_actions INTEGER NOT NULL DEFAULT 0,
+    passive_actions    INTEGER NOT NULL DEFAULT 0,
+    cbet_faced         INTEGER NOT NULL DEFAULT 0,
+    fold_to_cbet_count INTEGER NOT NULL DEFAULT 0
+);
+"""
+
+_CREATE_NOTES_TABLE = """\
+CREATE TABLE IF NOT EXISTS opponent_notes (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    name       TEXT NOT NULL REFERENCES opponent_stats(name),
+    note       TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+"""
+
+_UPSERT_STATS = """\
+INSERT INTO opponent_stats (
+    name, hands_seen, vpip_count, pfr_count, three_bet_count,
+    aggression_actions, passive_actions, cbet_faced, fold_to_cbet_count
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+ON CONFLICT(name) DO UPDATE SET
+    hands_seen         = excluded.hands_seen,
+    vpip_count         = excluded.vpip_count,
+    pfr_count          = excluded.pfr_count,
+    three_bet_count    = excluded.three_bet_count,
+    aggression_actions = excluded.aggression_actions,
+    passive_actions    = excluded.passive_actions,
+    cbet_faced         = excluded.cbet_faced,
+    fold_to_cbet_count = excluded.fold_to_cbet_count;
+"""
 
 
 @dataclass
@@ -82,19 +125,126 @@ class OpponentStats:
 
 
 class OpponentTracker:
-    """Manages persistent opponent notes and statistics."""
+    """Manages persistent opponent notes and statistics.
 
-    def __init__(self) -> None:
+    Uses SQLite with WAL mode for safe concurrent access. Stats are
+    cached in memory for O(1) lookups during gameplay and written
+    through to the database on every update.
+    """
+
+    def __init__(self, db_path: Path | str | None = None) -> None:
+        self._db_path = Path(db_path) if db_path else _DB_FILE
+        self._db_path.parent.mkdir(parents=True, exist_ok=True)
+        self._conn = sqlite3.connect(str(self._db_path))
+        self._conn.execute("PRAGMA journal_mode=WAL;")
+        self._conn.execute("PRAGMA foreign_keys=ON;")
+        self._create_tables()
+        self._migrate_legacy_json()
         self._players: dict[str, OpponentStats] = {}
         self._load()
+
+    def _create_tables(self) -> None:
+        self._conn.execute(_CREATE_STATS_TABLE)
+        self._conn.execute(_CREATE_NOTES_TABLE)
+        self._conn.commit()
+
+    def _migrate_legacy_json(self) -> None:
+        """Import data from the old JSON file if it exists."""
+        json_path = self._db_path.parent / "opponents.json"
+        if not json_path.exists():
+            return
+        try:
+            raw = json.loads(json_path.read_text())
+            for name, d in raw.items():
+                notes = d.pop("notes", [])
+                self._conn.execute(_UPSERT_STATS, (
+                    name,
+                    d.get("hands_seen", 0),
+                    d.get("vpip_count", 0),
+                    d.get("pfr_count", 0),
+                    d.get("three_bet_count", 0),
+                    d.get("aggression_actions", 0),
+                    d.get("passive_actions", 0),
+                    d.get("cbet_faced", 0),
+                    d.get("fold_to_cbet_count", 0),
+                ))
+                for note in notes:
+                    self._conn.execute(
+                        "INSERT INTO opponent_notes (name, note) VALUES (?, ?)",
+                        (name, note),
+                    )
+            self._conn.commit()
+            # Rename legacy file so migration only runs once
+            backup = json_path.with_suffix(".json.bak")
+            json_path.rename(backup)
+        except (json.JSONDecodeError, TypeError, KeyError, OSError):
+            pass  # Skip migration on corrupt/unreadable data
+
+    def _load(self) -> None:
+        """Load all stats and notes from the database into memory."""
+        self._players.clear()
+        rows = self._conn.execute(
+            "SELECT name, hands_seen, vpip_count, pfr_count, three_bet_count, "
+            "aggression_actions, passive_actions, cbet_faced, fold_to_cbet_count "
+            "FROM opponent_stats"
+        ).fetchall()
+        for row in rows:
+            name = row[0]
+            self._players[name] = OpponentStats(
+                name=name,
+                hands_seen=row[1],
+                vpip_count=row[2],
+                pfr_count=row[3],
+                three_bet_count=row[4],
+                aggression_actions=row[5],
+                passive_actions=row[6],
+                cbet_faced=row[7],
+                fold_to_cbet_count=row[8],
+            )
+        # Load notes for each player
+        note_rows = self._conn.execute(
+            "SELECT name, note FROM opponent_notes ORDER BY id"
+        ).fetchall()
+        for name, note in note_rows:
+            if name in self._players:
+                self._players[name].notes.append(note)
+
+    def _save_player(self, name: str) -> None:
+        """Write a single player's stats to the database."""
+        p = self._players[name]
+        self._conn.execute(_UPSERT_STATS, (
+            p.name, p.hands_seen, p.vpip_count, p.pfr_count,
+            p.three_bet_count, p.aggression_actions, p.passive_actions,
+            p.cbet_faced, p.fold_to_cbet_count,
+        ))
+        self._conn.commit()
 
     def add_note(self, name: str, note: str) -> None:
         """Add a text note for a player."""
         name = name.strip()
+        note = note.strip()
         if name not in self._players:
             self._players[name] = OpponentStats(name=name)
-        self._players[name].notes.append(note.strip())
-        self.save()
+            self._save_player(name)
+        self._players[name].notes.append(note)
+        self._conn.execute(
+            "INSERT INTO opponent_notes (name, note) VALUES (?, ?)",
+            (name, note),
+        )
+        self._conn.commit()
+
+    def get_notes(self, name: str) -> list[tuple[str, str]]:
+        """Get all notes for a player with timestamps.
+
+        Returns:
+            List of (note, created_at) tuples, ordered by creation time.
+        """
+        rows = self._conn.execute(
+            "SELECT note, created_at FROM opponent_notes "
+            "WHERE name = ? ORDER BY id",
+            (name.strip(),),
+        ).fetchall()
+        return [(row[0], row[1]) for row in rows]
 
     def update_stats(
         self,
@@ -121,7 +271,7 @@ class OpponentTracker:
         p.passive_actions += passive
         p.cbet_faced += cbet_faced
         p.fold_to_cbet_count += fold_to_cbet
-        self.save()
+        self._save_player(name)
 
     def get_player(self, name: str) -> OpponentStats | None:
         """Get stats for a player, or None if not tracked."""
@@ -159,19 +309,12 @@ class OpponentTracker:
         """Return all tracked player names."""
         return sorted(self._players.keys())
 
-    def save(self) -> None:
-        """Persist data to disk."""
-        _DATA_DIR.mkdir(parents=True, exist_ok=True)
-        data = {name: asdict(stats) for name, stats in self._players.items()}
-        _DATA_FILE.write_text(json.dumps(data, indent=2))
+    def close(self) -> None:
+        """Close the database connection."""
+        if self._conn:
+            self._conn.close()
+            self._conn = None  # type: ignore[assignment]
 
-    def _load(self) -> None:
-        """Load data from disk if it exists."""
-        if not _DATA_FILE.exists():
-            return
-        try:
-            raw = json.loads(_DATA_FILE.read_text())
-            for name, d in raw.items():
-                self._players[name] = OpponentStats(**d)
-        except (json.JSONDecodeError, TypeError, KeyError):
-            pass  # Start fresh on corrupt data
+    # Keep save() as a no-op alias for backward compatibility
+    def save(self) -> None:
+        """No-op — writes happen automatically on each update."""
