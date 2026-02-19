@@ -71,6 +71,5 @@ For changes to the decision engine, follow the 5-step pipeline in `.claude/workf
 
 ## Known limitations
 
-- `models/` (opponent modeling) is stubbed — not yet implemented
 - No pure bluffing or trapping/slow-play logic in PostflopEngine
 - `Range.contains()` is O(n*m) per check — no combo caching yet

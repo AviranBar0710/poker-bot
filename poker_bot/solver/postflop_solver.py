@@ -25,8 +25,29 @@ from poker_bot.strategy.decision_maker import (
     analyze_board,
 )
 from poker_bot.strategy.preflop_ranges import Range
+from poker_bot.interface.opponent_tracker import OpponentStats
 from poker_bot.utils.card import Card
 from poker_bot.utils.constants import Action, Position, Street
+
+# GTO baseline stats (used when sample size is insufficient)
+_GTO_DEFAULTS = {
+    "vpip": 22.0,
+    "pfr": 18.0,
+    "three_bet": 7.0,
+    "fold_to_cbet": 50.0,
+    "aggression_factor": 2.0,
+}
+
+# Minimum sample sizes before exploitative adjustments begin
+_MIN_SAMPLES = {
+    "vpip": 30,       # hands_seen for VPIP/PFR
+    "pfr": 30,
+    "three_bet": 50,   # hands_seen for 3-bet
+    "fold_to_cbet": 10,  # cbet_faced instances
+}
+
+# Full confidence at 3× the minimum threshold
+_FULL_CONFIDENCE_MULT = 3
 
 _DATA_PATH = Path(__file__).parent / "data" / "postflop_strategies.json"
 
@@ -127,6 +148,7 @@ class PostflopSolver:
         opponent_range: Range | None = None,
         num_opponents: int = 1,
         is_ip: bool = True,
+        opponent_stats: OpponentStats | None = None,
     ) -> SolverResult:
         """Get a mixed strategy for a postflop spot.
 
@@ -144,6 +166,7 @@ class PostflopSolver:
             opponent_range: Optional explicit opponent range.
             num_opponents: Number of opponents still in the hand (default 1).
             is_ip: Whether hero is in position (acts last) (default True).
+            opponent_stats: Optional opponent statistics for exploitative adjustments.
 
         Returns:
             SolverResult with mixed strategy.
@@ -178,6 +201,8 @@ class PostflopSolver:
             node = self._apply_position_adjustment(node, is_ip, hand_category)
             if num_opponents >= 2:
                 node = self._apply_multiway_adjustment(node, num_opponents, hand_category)
+            if opponent_stats is not None:
+                node = self._apply_exploit_adjustment(node, opponent_stats, hand_category)
             return SolverResult(
                 strategy=node,
                 source="postflop_lookup",
@@ -206,6 +231,8 @@ class PostflopSolver:
         node = self._apply_position_adjustment(node, is_ip, hand_category)
         if num_opponents >= 2:
             node = self._apply_multiway_adjustment(node, num_opponents, hand_category)
+        if opponent_stats is not None:
+            node = self._apply_exploit_adjustment(node, opponent_stats, hand_category)
 
         return SolverResult(
             strategy=node,
@@ -368,6 +395,90 @@ class PostflopSolver:
             elif af.action == "fold":
                 freq *= fold_mult
             # call unchanged
+
+            adjusted.append(ActionFrequency(af.action, freq, amount, af.ev))
+
+        return StrategyNode(actions=adjusted).normalized()
+
+    @staticmethod
+    def _effective_stat(
+        observed: float,
+        stat_name: str,
+        sample_size: int,
+    ) -> float:
+        """Blend an observed stat toward GTO default based on sample confidence.
+
+        Returns GTO default when sample_size < minimum threshold, linearly
+        blends toward observed value, reaching full weight at 3× threshold.
+
+        Args:
+            observed: The raw observed stat value (e.g., VPIP 40%).
+            stat_name: Key into _GTO_DEFAULTS / _MIN_SAMPLES.
+            sample_size: Number of relevant observations.
+
+        Returns:
+            Blended stat value between GTO default and observed.
+        """
+        gto_default = _GTO_DEFAULTS[stat_name]
+        threshold = _MIN_SAMPLES[stat_name]
+
+        if sample_size < threshold:
+            return gto_default
+
+        full_at = threshold * _FULL_CONFIDENCE_MULT
+        weight = min(1.0, (sample_size - threshold) / (full_at - threshold))
+        return gto_default + weight * (observed - gto_default)
+
+    @staticmethod
+    def _apply_exploit_adjustment(
+        node: StrategyNode,
+        stats: OpponentStats,
+        hand_category: str,
+    ) -> StrategyNode:
+        """Apply exploitative frequency shifts based on opponent tendencies.
+
+        Adjusts bluff/value frequencies based on fold-to-cbet and aggression
+        factor, with confidence gating via _effective_stat().
+        """
+        fold_cbet = PostflopSolver._effective_stat(
+            stats.fold_to_cbet_pct, "fold_to_cbet", stats.cbet_faced,
+        )
+        agg_raw = min(stats.aggression_factor, 10.0)  # cap inf
+        agg_sample = stats.aggression_actions + stats.passive_actions
+        agg = PostflopSolver._effective_stat(
+            agg_raw, "vpip", agg_sample,  # reuse vpip threshold (30) for AF
+        )
+
+        adjusted = []
+        for af in node.actions:
+            freq = af.frequency
+            amount = af.amount
+
+            if af.action == "raise":
+                if hand_category == "air":
+                    # Bluff more vs high folders, less vs low folders
+                    if fold_cbet > 60:
+                        freq *= 1.30
+                    elif fold_cbet < 30:
+                        freq *= 0.50
+                else:
+                    # Thin value bet more vs stations
+                    if fold_cbet < 30:
+                        freq *= 1.20
+                # vs passive opponents, bluff more (they won't raise back)
+                if agg < 1.0 and hand_category in ("air", "weak_draw"):
+                    freq *= 1.15
+                # Size down vs high folders (don't need big bets)
+                if fold_cbet > 60 and amount > 0:
+                    amount *= 0.85
+            elif af.action == "check":
+                # Trap more vs hyper-aggressive opponents
+                if agg > 3.0 and hand_category in ("nuts", "strong_made"):
+                    freq *= 1.25
+            elif af.action == "fold":
+                # Fold less vs passive opponents (they don't bluff)
+                if agg < 1.0:
+                    freq *= 0.85
 
             adjusted.append(ActionFrequency(af.action, freq, amount, af.ev))
 

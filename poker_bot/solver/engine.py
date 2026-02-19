@@ -225,6 +225,14 @@ class SolverEngine:
             hero.position.value, villain_positions,
         )
 
+        # Look up opponent stats for the primary villain (first active opponent)
+        villain_stats = None
+        if context.opponent_stats:
+            for p in game_state.active_players:
+                if p is not hero and p.name in context.opponent_stats:
+                    villain_stats = context.opponent_stats[p.name]
+                    break
+
         result = self._postflop.get_strategy(
             hero_cards=hero.hole_cards,
             community_cards=game_state.community_cards,
@@ -239,6 +247,7 @@ class SolverEngine:
             opponent_range=opponent_range,
             num_opponents=num_opponents,
             is_ip=is_ip,
+            opponent_stats=villain_stats,
         )
 
         logger.debug(

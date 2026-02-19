@@ -2,7 +2,13 @@
 
 from unittest.mock import patch
 
-from poker_bot.solver.postflop_solver import PostflopSolver
+from poker_bot.interface.opponent_tracker import OpponentStats
+from poker_bot.solver.postflop_solver import (
+    PostflopSolver,
+    _FULL_CONFIDENCE_MULT,
+    _GTO_DEFAULTS,
+    _MIN_SAMPLES,
+)
 from poker_bot.strategy.decision_maker import PriorAction
 from poker_bot.utils.card import Card
 from poker_bot.utils.constants import Action, Position, Street
@@ -276,3 +282,190 @@ class TestMultiwayAdjustments:
         )
         total = sum(a.frequency for a in result.strategy.actions)
         assert abs(total - 1.0) < 0.01
+
+
+def _make_stats(
+    name: str = "Villain",
+    hands_seen: int = 100,
+    vpip_count: int = 22,
+    pfr_count: int = 18,
+    cbet_faced: int = 30,
+    fold_to_cbet_count: int = 15,
+    aggression_actions: int = 40,
+    passive_actions: int = 20,
+) -> OpponentStats:
+    """Create an OpponentStats with sensible defaults."""
+    return OpponentStats(
+        name=name,
+        hands_seen=hands_seen,
+        vpip_count=vpip_count,
+        pfr_count=pfr_count,
+        cbet_faced=cbet_faced,
+        fold_to_cbet_count=fold_to_cbet_count,
+        aggression_actions=aggression_actions,
+        passive_actions=passive_actions,
+    )
+
+
+class TestEffectiveStat:
+    """Test the linear blending helper for confidence gating."""
+
+    def test_below_threshold_returns_gto_default(self):
+        """Sample below threshold should return pure GTO default."""
+        result = PostflopSolver._effective_stat(40.0, "vpip", 10)
+        assert result == _GTO_DEFAULTS["vpip"]
+
+    def test_at_threshold_returns_gto_default(self):
+        """Exactly at threshold boundary, weight is 0 so still GTO default."""
+        threshold = _MIN_SAMPLES["vpip"]
+        result = PostflopSolver._effective_stat(40.0, "vpip", threshold)
+        assert result == _GTO_DEFAULTS["vpip"]
+
+    def test_at_full_confidence_returns_observed(self):
+        """At 3× threshold, should return the full observed value."""
+        threshold = _MIN_SAMPLES["vpip"]
+        full_at = threshold * _FULL_CONFIDENCE_MULT
+        result = PostflopSolver._effective_stat(40.0, "vpip", full_at)
+        assert abs(result - 40.0) < 0.01
+
+    def test_midpoint_blends_halfway(self):
+        """Halfway between threshold and full should blend ~50%."""
+        threshold = _MIN_SAMPLES["vpip"]
+        full_at = threshold * _FULL_CONFIDENCE_MULT
+        midpoint = (threshold + full_at) // 2
+        result = PostflopSolver._effective_stat(40.0, "vpip", midpoint)
+        gto = _GTO_DEFAULTS["vpip"]
+        expected = gto + 0.5 * (40.0 - gto)
+        assert abs(result - expected) < 1.0  # within 1%
+
+    def test_above_full_confidence_capped_at_observed(self):
+        """Sample >> 3× threshold should still return observed, not overshoot."""
+        result = PostflopSolver._effective_stat(40.0, "vpip", 500)
+        assert abs(result - 40.0) < 0.01
+
+    def test_fold_to_cbet_threshold_uses_cbet_faced(self):
+        """fold_to_cbet uses its own threshold (10 instances)."""
+        # Below threshold
+        result_low = PostflopSolver._effective_stat(70.0, "fold_to_cbet", 5)
+        assert result_low == _GTO_DEFAULTS["fold_to_cbet"]
+        # Above full confidence
+        full_at = _MIN_SAMPLES["fold_to_cbet"] * _FULL_CONFIDENCE_MULT
+        result_high = PostflopSolver._effective_stat(70.0, "fold_to_cbet", full_at)
+        assert abs(result_high - 70.0) < 0.01
+
+
+class TestExploitAdjustments:
+    """Test exploitative frequency shifts based on opponent tendencies."""
+
+    def setup_method(self):
+        self.solver = PostflopSolver()
+        self._air_common = dict(
+            hero_cards=_cards("2h 3d"),
+            community_cards=_cards("As Kd 9c"),
+            position=Position.BTN,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=[],
+            hand_strength=0.05,
+            is_ip=True,
+            num_opponents=1,
+        )
+        self._strong_common = dict(
+            hero_cards=_cards("Ah Ad"),
+            community_cards=_cards("As 8d 3c"),
+            position=Position.BTN,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=[],
+            hand_strength=0.95,
+            is_ip=True,
+            num_opponents=1,
+        )
+
+    def _get_freq(self, result, action_name):
+        return sum(a.frequency for a in result.strategy.actions if a.action == action_name)
+
+    def test_no_stats_matches_gto(self):
+        """No opponent_stats should produce the same result as GTO baseline."""
+        gto_result = self.solver.get_strategy(**self._air_common)
+        stats_result = self.solver.get_strategy(**self._air_common, opponent_stats=None)
+        for a1, a2 in zip(gto_result.strategy.actions, stats_result.strategy.actions):
+            assert abs(a1.frequency - a2.frequency) < 0.001
+
+    def test_low_sample_matches_gto(self):
+        """Opponent with too few hands should not trigger exploit adjustments."""
+        low_sample = _make_stats(hands_seen=10, vpip_count=8, cbet_faced=3)
+        gto_result = self.solver.get_strategy(**self._air_common)
+        exploit_result = self.solver.get_strategy(**self._air_common, opponent_stats=low_sample)
+        gto_raise = self._get_freq(gto_result, "raise")
+        exploit_raise = self._get_freq(exploit_result, "raise")
+        # Should be nearly identical since low samples fall back to GTO defaults
+        assert abs(gto_raise - exploit_raise) < 0.01
+
+    def test_high_fold_to_cbet_bluffs_more(self):
+        """Vs opponent who folds >60% to c-bets, bluff more with air."""
+        high_folder = _make_stats(
+            cbet_faced=40, fold_to_cbet_count=30,  # 75% fold
+        )
+        gto_result = self.solver.get_strategy(**self._air_common)
+        exploit_result = self.solver.get_strategy(**self._air_common, opponent_stats=high_folder)
+        assert self._get_freq(exploit_result, "raise") > self._get_freq(gto_result, "raise")
+
+    def test_low_fold_to_cbet_bluffs_less(self):
+        """Vs opponent who folds <30% to c-bets, bluff less with air."""
+        station = _make_stats(
+            cbet_faced=40, fold_to_cbet_count=8,  # 20% fold
+        )
+        gto_result = self.solver.get_strategy(**self._air_common)
+        exploit_result = self.solver.get_strategy(**self._air_common, opponent_stats=station)
+        assert self._get_freq(exploit_result, "raise") < self._get_freq(gto_result, "raise")
+
+    def test_low_fold_cbet_value_bets_more(self):
+        """Vs calling station, value bet more with strong hands."""
+        station = _make_stats(
+            cbet_faced=40, fold_to_cbet_count=8,  # 20% fold
+        )
+        gto_result = self.solver.get_strategy(**self._strong_common)
+        exploit_result = self.solver.get_strategy(**self._strong_common, opponent_stats=station)
+        assert self._get_freq(exploit_result, "raise") > self._get_freq(gto_result, "raise")
+
+    def test_hyper_aggressive_traps_more(self):
+        """Vs hyper-aggressive opponent, check more with strong hands (trap)."""
+        lag = _make_stats(
+            aggression_actions=80, passive_actions=10,  # AF = 8.0
+        )
+        gto_result = self.solver.get_strategy(**self._strong_common)
+        exploit_result = self.solver.get_strategy(**self._strong_common, opponent_stats=lag)
+        assert self._get_freq(exploit_result, "check") > self._get_freq(gto_result, "check")
+
+    def test_exploit_frequencies_sum_to_one(self):
+        """Exploit-adjusted strategies should still normalize to ~1.0."""
+        for stats in [
+            _make_stats(cbet_faced=40, fold_to_cbet_count=35),  # high folder
+            _make_stats(cbet_faced=40, fold_to_cbet_count=5),   # station
+            _make_stats(aggression_actions=80, passive_actions=10),  # LAG
+        ]:
+            result = self.solver.get_strategy(**self._air_common, opponent_stats=stats)
+            total = sum(a.frequency for a in result.strategy.actions)
+            assert abs(total - 1.0) < 0.01, f"freqs sum to {total} for {stats.name}"
+
+    def test_gradual_scaling_increases_adjustment(self):
+        """As sample grows, adjustment should increase monotonically."""
+        bluff_freqs = []
+        for hands in [30, 45, 60, 90, 150]:
+            # Scale cbet_faced proportionally
+            cbet_faced = max(10, hands // 3)
+            fold_count = int(cbet_faced * 0.75)  # 75% fold rate
+            stats = _make_stats(
+                hands_seen=hands,
+                cbet_faced=cbet_faced,
+                fold_to_cbet_count=fold_count,
+            )
+            result = self.solver.get_strategy(**self._air_common, opponent_stats=stats)
+            bluff_freqs.append(self._get_freq(result, "raise"))
+
+        # Bluff frequency should generally increase as confidence grows
+        # (because observed fold-to-cbet 75% > GTO default 50%)
+        assert bluff_freqs[-1] >= bluff_freqs[0]

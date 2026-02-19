@@ -4,6 +4,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import StrEnum
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from poker_bot.interface.opponent_tracker import OpponentStats
 
 
 class GameType(StrEnum):
@@ -87,6 +91,9 @@ class GameContext:
 
     # Table dynamics
     table_stack_sizes_bb: list[float] = field(default_factory=list)
+
+    # Opponent modeling (player name -> stats)
+    opponent_stats: dict[str, OpponentStats] = field(default_factory=dict)
 
     @property
     def is_tournament(self) -> bool:

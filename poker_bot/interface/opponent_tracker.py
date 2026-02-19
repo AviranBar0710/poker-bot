@@ -28,6 +28,8 @@ class OpponentStats:
     three_bet_count: int = 0
     aggression_actions: int = 0  # bet + raise
     passive_actions: int = 0     # check + call
+    cbet_faced: int = 0          # times faced a continuation bet
+    fold_to_cbet_count: int = 0  # times folded to a continuation bet
 
     @property
     def vpip_pct(self) -> float:
@@ -40,6 +42,10 @@ class OpponentStats:
     @property
     def three_bet_pct(self) -> float:
         return (self.three_bet_count / self.hands_seen * 100) if self.hands_seen else 0.0
+
+    @property
+    def fold_to_cbet_pct(self) -> float:
+        return (self.fold_to_cbet_count / self.cbet_faced * 100) if self.cbet_faced else 0.0
 
     @property
     def aggression_factor(self) -> float:
@@ -99,6 +105,8 @@ class OpponentTracker:
         three_bet: int = 0,
         aggressive: int = 0,
         passive: int = 0,
+        cbet_faced: int = 0,
+        fold_to_cbet: int = 0,
     ) -> None:
         """Increment stat counters for a player."""
         name = name.strip()
@@ -111,6 +119,8 @@ class OpponentTracker:
         p.three_bet_count += three_bet
         p.aggression_actions += aggressive
         p.passive_actions += passive
+        p.cbet_faced += cbet_faced
+        p.fold_to_cbet_count += fold_to_cbet
         self.save()
 
     def get_player(self, name: str) -> OpponentStats | None:

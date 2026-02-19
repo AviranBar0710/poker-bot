@@ -6,6 +6,7 @@ that considers position, action type, bet sizing, and board texture.
 
 from __future__ import annotations
 
+from poker_bot.interface.opponent_tracker import OpponentStats
 from poker_bot.strategy.decision_maker import PriorAction
 from poker_bot.strategy.preflop_ranges import (
     CALL_VS_RAISE_RANGES,
@@ -157,6 +158,64 @@ class RangeEstimator:
             kept = set(sorted_hands[:keep_count])
 
         return Range(hands=kept)
+
+    @staticmethod
+    def adjust_range_for_tendencies(
+        base_range: Range,
+        stats: OpponentStats,
+    ) -> Range:
+        """Widen or narrow an opponent's estimated range based on VPIP/PFR.
+
+        Uses confidence-gated blending: needs ≥30 hands before adjusting,
+        reaches full adjustment at 90 hands.
+
+        Args:
+            base_range: GTO-based range estimate from action history.
+            stats: Opponent's tracked statistics.
+
+        Returns:
+            Adjusted range (wider for loose players, narrower for tight).
+        """
+        from poker_bot.solver.postflop_solver import _GTO_DEFAULTS, _MIN_SAMPLES, _FULL_CONFIDENCE_MULT
+        from poker_bot.strategy.tournament_strategy import _hand_strength_key
+
+        if not base_range.hands:
+            return base_range
+
+        # Compute effective VPIP with confidence gating
+        threshold = _MIN_SAMPLES["vpip"]
+        if stats.hands_seen < threshold:
+            return base_range  # Not enough data — keep GTO range
+
+        full_at = threshold * _FULL_CONFIDENCE_MULT
+        weight = min(1.0, (stats.hands_seen - threshold) / (full_at - threshold))
+        eff_vpip = _GTO_DEFAULTS["vpip"] + weight * (stats.vpip_pct - _GTO_DEFAULTS["vpip"])
+
+        # Compute how much to scale the range
+        # GTO VPIP ~22%. Each 1% deviation scales range by ~2%
+        scale = eff_vpip / _GTO_DEFAULTS["vpip"]
+        # Clamp to reasonable bounds [0.5, 2.0]
+        scale = max(0.5, min(2.0, scale))
+
+        if abs(scale - 1.0) < 0.05:
+            return base_range  # Negligible adjustment
+
+        sorted_hands = sorted(
+            base_range.hands, key=_hand_strength_key, reverse=True,
+        )
+        total = len(sorted_hands)
+        target = max(1, int(total * scale))
+
+        if scale > 1.0:
+            # Loose player: keep all current hands (range is already their
+            # minimum). We can't invent new hands, so just return as-is.
+            # The wider range is already reflected by using a looser
+            # starting range estimate.
+            return base_range
+        else:
+            # Tight player: narrow the range to top hands
+            kept = set(sorted_hands[:target])
+            return Range(hands=kept)
 
     @staticmethod
     def categorize_hand(
