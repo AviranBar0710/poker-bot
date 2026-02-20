@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Setup
 python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 
-# Run all tests (241 tests, ~35s)
+# Run all tests (410 tests, ~26s)
 pytest -v
 
 # Run a single test file
@@ -21,54 +21,225 @@ pytest tests/test_decision_maker.py::TestPreflopOpen::test_utg_open_with_aces -v
 pytest --cov=poker_bot --cov-report=term-missing
 ```
 
-## Architecture
+## Architecture Overview
 
-The decision engine follows a layered pipeline: **GameState + GameContext → PreflopEngine / PostflopEngine → Decision**.
-
-### Module dependency flow (no circular imports)
+The poker bot is a GTO-based decision engine for Texas Hold'em (cash games and MTT tournaments). It follows a layered pipeline:
 
 ```
-utils/constants.py          # Enums: Rank, Suit, Position, Action, Street, HandRanking
-utils/card.py               # Card (frozen dataclass), Deck
-    ↓
-core/hand_evaluator.py      # HandEvaluator.evaluate(cards) → HandResult (best 5 from up to 7)
-core/game_state.py          # PlayerState, GameState (tracks pot, board, players, street)
-core/game_context.py        # GameContext: game type, stack depth, tournament phase, ICM data
-    ↓
-core/equity_calculator.py   # Monte Carlo: hand_vs_hand, hand_vs_range, range_vs_range
-strategy/preflop_ranges.py  # GTO ranges by position, notation parser ("JJ+", "ATs+", "A5s-A2s")
-strategy/stack_strategy.py  # Stack-depth adjustments, push/fold charts (<15bb)
-strategy/tournament_strategy.py  # ICM calculator (Malmuth-Harville), bubble factor, survival premium
-    ↓
-strategy/decision_maker.py  # DecisionMaker.make_decision() → Decision(action, amount, reasoning)
+GameState + GameContext → SolverEngine → PreflopSolver / PostflopSolver → SolverResult → DecisionMaker → Decision
 ```
 
-### Key design decisions
+### Module Dependency Flow (no circular imports)
 
-- **Decisions are data**: `Decision` is a frozen dataclass with `action`, `amount`, `reasoning`, `equity`, `pot_odds`. No side effects.
-- **Range system**: `Range` class holds `set[HandNotation]`. Notation like `"AA,AKs,JJ+"` expands to specific card combos. Context-aware: `get_opening_range(position, context)` chains stack + tournament adjustments.
-- **Effective call**: `make_decision` computes `effective_bet = game_state.current_bet - hero.current_bet` before passing to engines.
-- **ICM adjustment**: Post-flop calling threshold is `pot_odds / survival_premium` where premium ∈ [0.3, 1.0]. Lower premium = tighter play.
-- **Push/fold**: Stacks <15bb bypass normal range logic and use position-specific push/fold charts (5bb and 10bb tiers). BB has no push chart — handled separately.
-- **Equity estimation**: 1000 sims for clear spots, 2000 for close decisions (hand_strength 0.25–0.75). Fast-tracked at extremes (≥0.95 or ≤0.05).
+```
+utils/constants.py              # Enums: Rank, Suit, Position, Action, Street, HandRanking
+utils/card.py                   # Card (frozen dataclass), Deck
+    ↓
+core/hand_evaluator.py          # HandEvaluator.evaluate(cards) → HandResult (best 5 from up to 7)
+core/game_state.py              # PlayerState, GameState (pot, board, players, street)
+core/game_context.py            # GameContext: game type, stack depth, tournament phase, ICM,
+                                #   opponent_stats: dict[str, OpponentStats]
+core/equity_calculator.py       # Monte Carlo equity: hand_vs_hand, hand_vs_range, range_vs_range
+                                #   parallel_hand_vs_range (splits across CPU cores, max 4 workers)
+    ↓
+strategy/preflop_ranges.py      # GTO ranges by position, notation parser ("JJ+", "ATs+", "A5s-A2s")
+strategy/stack_strategy.py      # Stack-depth adjustments, push/fold charts (<15bb)
+strategy/tournament_strategy.py # ICM calculator (Malmuth-Harville), bubble factor, survival premium
+    ↓
+solver/data_structures.py       # ActionFrequency, StrategyNode, SolverResult, SpotKey, SolverProtocol
+solver/board_bucketing.py       # bucket_board(), bucket_stack(), bucket_spr() — board texture classification
+solver/bet_sizing.py            # BetSizingTree: geometric sizing trees by street and texture
+solver/range_estimator.py       # RangeEstimator: street-by-street opponent range narrowing + VPIP adjustment
+solver/icm_adapter.py           # adjust_for_icm(): tournament pressure adjustments on strategy frequencies
+solver/preflop_solver.py        # PreflopSolver: O(1) JSON lookup → heuristic fallback
+solver/postflop_solver.py       # PostflopSolver: JSON lookup → heuristic → MC equity fallback
+                                #   + 4-layer adjustment pipeline (see below)
+solver/engine.py                # SolverEngine: top-level orchestrator routing preflop/postflop
+    ↓
+strategy/decision_maker.py      # DecisionMaker.make_decision() → Decision(action, amount, reasoning)
+    ↓
+interface/opponent_tracker.py   # OpponentTracker: SQLite-backed opponent stats + notes
+interface/poker_coach.py        # PokerCoach: user-facing coaching interface
+```
 
-### Post-flop hand strength scores (thresholds that drive decisions)
+### Pre-computed Data Files
 
-Betting threshold: `hand_strength ≥ 0.65 and equity > 0.55`. Value-raise threshold: `hand_strength ≥ 0.85 and equity > 0.70`. Key scores: HIGH_CARD=0.10, ONE_PAIR=0.40 (+0.25 for top pair), TWO_PAIR=0.65, THREE_OF_A_KIND=0.85, FLUSH=0.90, FULL_HOUSE=0.94.
+```
+solver/data/preflop_strategies.json   # Position × hand × action_seq × stack_bucket → mixed strategy
+solver/data/postflop_strategies.json  # Board_bucket × position × hand_category × SPR → mixed strategy
+```
 
-## Development workflow
+Generated by `solver/generator/generate_preflop.py` and `solver/generator/generate_postflop.py`.
+
+---
+
+## Solver Architecture
+
+### SolverProtocol
+
+`SolverProtocol` (in `data_structures.py`) is a `@runtime_checkable` Protocol interface:
+```python
+def solve(game_state, context, hero_index, action_history, opponent_range) -> SolverResult
+```
+Any backend (built-in `SolverEngine`, future PioSolver/LLM) implements this interface. `SolverResult` contains a `StrategyNode` (mixed strategy with action frequencies summing to 1.0), source label, confidence score, EV, and `SpotKey`.
+
+### SolverEngine (engine.py)
+
+Top-level orchestrator. Routes to `PreflopSolver` or `PostflopSolver` based on `current_street`. Wraps all logic in a resilience layer — any unexpected exception returns a safe fallback (fold, confidence=0). Applies ICM adjustments for tournaments via `adjust_for_icm()`.
+
+Computes and passes to postflop solver: `num_opponents`, `is_ip` (positional advantage), and `villain_stats` (from `GameContext.opponent_stats`).
+
+### PreflopSolver (preflop_solver.py)
+
+1. **JSON lookup** (O(1)): key = `(hand_notation, position, action_sequence, stack_bucket)`
+2. **Heuristic fallback**: position-specific opening/3-bet/4-bet ranges from `preflop_ranges.py`
+3. Applies survival premium scaling for tournaments
+
+### PostflopSolver (postflop_solver.py)
+
+Three-tier strategy resolution:
+
+1. **JSON lookup**: pre-computed strategies by `(board_bucket, position, hand_category, spr_bucket)`
+2. **Heuristic tables**: hand_category × texture_type → `[(action, frequency, sizing_fraction)]`
+   - 7 hand categories: `nuts`, `strong_made`, `medium_made`, `weak_made`, `strong_draw`, `weak_draw`, `air`
+   - 4 texture types: `dry`, `wet`, `monotone`, `paired`
+3. **Monte Carlo fallback**: real-time parallel equity calculation when heuristics are insufficient
+
+#### Postflop Adjustment Pipeline
+
+After base strategy resolution (lookup or heuristic), four sequential adjustment layers are applied:
+
+```
+Base Strategy → Position → Bluff/Trap → Multiway → Exploit → Normalize
+```
+
+**1. Position Adjustment** (`_apply_position_adjustment`):
+- **IP (in position)**: raise freq ×1.15, check ×0.80, sizing ×0.85, air bluffs ×1.20
+- **OOP (out of position)**: check freq ×1.20, raise ×0.85, sizing ×1.15, fold ×1.10
+
+**2. Bluff/Trap/Check-Raise Adjustment** (`_apply_bluff_trap_adjustment`):
+- **Bluffing** (air/weak_draw): texture modulation (dry ×1.40, paired ×1.30, wet ×0.70, monotone ×0.60), street scaling (flop 1.0 → river 0.70), IP bonus ×1.10
+- **Trapping** (nuts/strong_made on static boards): transfers 15-20% of raise freq to check (flop 1.0 → river 0.40 scaling), only when first-to-act or checked-to
+- **OOP check-raise bluff**: air facing bet on dry board → raise ×1.30
+- **OOP check-raise value**: nuts/strong facing bet → raise ×1.25
+
+**3. Multiway Adjustment** (`_apply_multiway_adjustment`, applied when `num_opponents >= 2`):
+- Raise freq ×(1 / num_opponents^0.3), fold freq ×(1 + 0.15 × (num_opponents - 1))
+- Air bluffs ×(1 / num_opponents^0.5), sizing ×0.85
+
+**4. Exploit Adjustment** (`_apply_exploit_adjustment`, applied when `opponent_stats` available):
+- Confidence-gated linear blending from GTO defaults to observed stats
+- `weight = clamp((sample_size - threshold) / (threshold × 2), 0, 1)`
+- Adjusts bluff frequency based on fold-to-cbet, value bets based on calling tendencies, trap frequency based on aggression factor
+- Zero weight below thresholds → pure GTO (bad data never worse than no data)
+
+All layers call `.normalized()` to ensure frequencies sum to 1.0 after each adjustment.
+
+### Board Bucketing (board_bucketing.py)
+
+Classifies boards into 12 buckets: `dry_high_rainbow`, `dry_low_rainbow`, `dry_medium`, `wet_connected`, `wet_two_tone`, `monotone_high`, `monotone_low`, `paired_high`, `paired_low`, `broadway_heavy`, `connected_low`, `dynamic`. Stack buckets: `deep` (>40bb), `medium` (15-40bb), `short` (<15bb). SPR buckets: `high` (>6), `medium` (2-6), `low` (<2).
+
+### Bet Sizing (bet_sizing.py)
+
+`BetSizingTree` provides geometric sizing trees by street and texture. `compute_bet_amount(pot, fraction, stack)` resolves sizing fractions to actual chip amounts, capped at stack.
+
+### Range Estimation (range_estimator.py)
+
+`RangeEstimator.estimate_preflop_range()` narrows opponent ranges street-by-street based on position, action type, and bet sizing. `adjust_range_for_tendencies()` widens/narrows based on VPIP with confidence gating.
+
+---
+
+## Opponent Modeling
+
+### OpponentStats (interface/opponent_tracker.py)
+
+Dataclass with: `name`, `hands_seen`, `vpip_count`, `pfr_count`, `three_bet_count`, `aggression_actions`, `passive_actions`, `cbet_faced`, `fold_to_cbet_count`. Computed properties: `vpip_pct`, `pfr_pct`, `three_bet_pct`, `fold_to_cbet_pct`, `aggression_factor`, `player_type` (TAG/LAG/NIT/fish classification).
+
+### OpponentTracker (SQLite Backend)
+
+- **Storage**: SQLite database at `~/.poker_coach/opponents.db` with WAL mode for concurrent-safe access
+- **Tables**: `opponent_stats` (primary key: name) + `opponent_notes` (timestamped notes with foreign key)
+- **In-memory cache**: dict[str, OpponentStats] loaded on init for O(1) solver lookups
+- **Legacy migration**: auto-migrates from JSON (`opponents.json`) on first run
+- **Integration**: `GameContext.opponent_stats` carries the dict, `SolverEngine._solve_postflop()` looks up the primary villain's stats and passes to `PostflopSolver.get_strategy()`
+
+### Confidence Thresholds
+
+| Stat | Min Samples | Sample Source | Full Confidence At |
+|------|-------------|---------------|-------------------|
+| VPIP/PFR | 30 hands | `hands_seen` | 90 hands |
+| 3-bet | 50 hands | `hands_seen` | 150 hands |
+| Fold to C-bet | 10 instances | `cbet_faced` | 30 instances |
+
+Below threshold: pure GTO defaults. Above full confidence: pure observed stat.
+
+---
+
+## Decision Engine
+
+### DecisionMaker (strategy/decision_maker.py)
+
+Produces `Decision(action: ActionType, amount: float, reasoning: str, equity: float, pot_odds: float)`. ActionTypes: `FOLD`, `CHECK`, `CALL`, `RAISE`, `ALL_IN`.
+
+Key flows:
+- **Effective call**: `effective_bet = game_state.current_bet - hero.current_bet`
+- **Push/fold**: stacks <15bb bypass normal ranges, use position-specific push/fold charts (5bb and 10bb tiers)
+- **ICM adjustment**: calling threshold = `pot_odds / survival_premium` where premium ∈ [0.3, 1.0]
+
+### Post-flop Hand Strength Scores
+
+Betting threshold: `hand_strength ≥ 0.65 and equity > 0.55`. Value-raise: `hand_strength ≥ 0.85 and equity > 0.70`. Key scores: HIGH_CARD=0.10, ONE_PAIR=0.40 (+0.25 for top pair), TWO_PAIR=0.65, THREE_OF_A_KIND=0.85, FLUSH=0.90, FULL_HOUSE=0.94.
+
+### Equity Calculator (core/equity_calculator.py)
+
+Monte Carlo simulation: 1000 sims for clear spots, 2000 for close decisions (hand_strength 0.25–0.75). Fast-tracked at extremes (≥0.95 or ≤0.05). Parallel variant (`parallel_hand_vs_range`) splits across CPU cores (max 4 workers, uses `ProcessPoolExecutor`).
+
+---
+
+## Development Workflow
 
 For changes to the decision engine, follow the 5-step pipeline in `.claude/workflows/decision_engine_workflow.md`:
 1. Implement → 2. Test (agent: `.claude/agents/testing_agent.md`) → 3. Code review (agent: `.claude/agents/code_review_agent.md`) → 4. Validate GTO (agent: `.claude/agents/validation_agent.md`) → 5. Iterate until all pass.
 
-## Testing patterns
+## Testing Patterns
 
+- **410 tests** across 20 test files, ~26s runtime
 - Post-flop tests mock `PostflopEngine._estimate_equity` to avoid Monte Carlo stochasticity
 - Assert on `ActionType` (FOLD/CHECK/CALL/RAISE/ALL_IN), not exact equity values
 - Use extreme matchups (AA vs 72o, sets vs air) for deterministic outcomes
 - Helper: `_cards("Ah Kh")` parses to `[Card, Card]`, used across all test files
 - Tests build `GameState` with `PlayerState` list; hero is typically at index 0
+- OpponentTracker tests use `tmp_path` for isolated SQLite databases
+- Postflop solver tests verify each adjustment layer independently (position, bluff/trap, multiway, exploit)
 
-## Known limitations
+### Test Files
+
+| File | Tests | Coverage |
+|------|-------|----------|
+| `test_decision_maker.py` | Preflop open/3-bet/4-bet, postflop value/draw/fold | Core decision paths |
+| `test_decision_edge_cases.py` | All-in edge cases, missing data, push/fold boundaries | Edge cases & bounds |
+| `test_decision_tournament.py` | ICM, bubble factor, survival premium | Tournament-specific |
+| `test_decision_validation.py` | Amount bounds, action consistency | Invariant validation |
+| `test_postflop_solver.py` | 47 tests: heuristics, position, bluff/trap, multiway, exploit | Full solver pipeline |
+| `test_preflop_solver.py` | JSON lookup, heuristic fallback, stack adjustments | Preflop strategy |
+| `test_solver_integration.py` | End-to-end SolverEngine + DecisionMaker | Integration |
+| `test_solver_protocol.py` | SolverProtocol compliance, SolverResult, StrategyNode | Protocol interface |
+| `test_opponent_tracker.py` | 22 tests: SQLite CRUD, migration, WAL, notes, close | Persistence layer |
+| `test_equity_calculator.py` | MC accuracy, parallel vs serial parity | Equity engine |
+| `test_hand_evaluator.py` | All hand rankings, tie-breaking, 7-card eval | Hand evaluation |
+| `test_preflop_ranges.py` | Range parsing, notation expansion, position ranges | Range system |
+| `test_board_bucketing.py` | All 12 board buckets, stack/SPR buckets | Board classification |
+| `test_bet_sizing.py` | Geometric sizing, texture-based sizing, stack capping | Bet sizing |
+| `test_range_estimator.py` | Range narrowing, tendency adjustments | Opponent ranging |
+| `test_data_structures.py` | StrategyNode normalization, sampling, SpotKey | Data structures |
+| `test_stack_strategy.py` | Push/fold charts, stack adjustments | Short-stack play |
+| `test_tournament_strategy.py` | ICM calculator, range adjustments | Tournament strategy |
+| `test_game_context.py` | Cash/tournament context creation | GameContext |
+
+## Known Limitations
 
 - `Range.contains()` is O(n*m) per check — no combo caching yet
+
+---
+
+## NEXT PHASE: Build a Graphical User Interface (GUI) for live play integration.
