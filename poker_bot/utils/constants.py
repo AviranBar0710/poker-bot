@@ -71,6 +71,7 @@ class Action(StrEnum):
     CALL = "CALL"
     RAISE = "RAISE"
     ALL_IN = "ALL_IN"
+    LIMP = "LIMP"
 
 
 class Street(StrEnum):

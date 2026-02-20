@@ -161,6 +161,32 @@ class TestPresenterCallbacks:
         view.show_error.assert_called_once_with("Solver error: MC calculation failed")
 
 
+    def test_gto_unavailable_shows_warning(self):
+        """GTO_UNAVAILABLE result should call show_gto_unavailable, not show_result."""
+        view = _make_mock_view()
+        engine = _make_mock_engine()
+        presenter = GUIPresenter(view=view, engine=engine)
+
+        solver_result = SolverResult(
+            strategy=StrategyNode(actions=[]),
+            source="gto_unavailable",
+            confidence=0.0,
+            ev=0.0,
+        )
+
+        response = MagicMock()
+        response.decision = Decision(
+            action=ActionType.FOLD,
+            amount=0.0,
+            reasoning="No solver available",
+        )
+        response.solver_result = solver_result
+
+        presenter._on_solving_finished(response)
+        view.show_gto_unavailable.assert_called_once()
+        view.show_result.assert_not_called()
+
+
 class TestPresenterVillainLookup:
     """Tests for on_villain_changed()."""
 

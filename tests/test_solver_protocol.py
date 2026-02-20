@@ -218,7 +218,8 @@ class TestResilience:
         """If internal solver raises, solve() returns safe fallback."""
         engine = SolverEngine()
         # Corrupt the preflop solver's data to trigger an error
-        engine._preflop._data = "not a dict"
+        engine._preflop._json_data = "not a dict"
+        engine._preflop._db = None
 
         gs = _make_game_state(_cards("Ah Kh"))
         ctx = GameContext.cash_game(100.0)
@@ -237,7 +238,8 @@ class TestResilience:
     def test_fallback_has_zero_confidence(self):
         """Fallback result should have confidence 0 so DecisionMaker uses heuristic."""
         engine = SolverEngine()
-        engine._preflop._data = "broken"
+        engine._preflop._json_data = "broken"
+        engine._preflop._db = None
 
         gs = _make_game_state(_cards("Ah As"))
         ctx = GameContext.cash_game(100.0)
@@ -249,7 +251,8 @@ class TestResilience:
     def test_decision_maker_uses_heuristic_on_solver_failure(self):
         """DecisionMaker should fall back to heuristic when solver fails."""
         engine = SolverEngine()
-        engine._preflop._data = "broken"
+        engine._preflop._json_data = "broken"
+        engine._preflop._db = None
 
         maker = DecisionMaker(solver=engine)
         gs = _make_game_state(_cards("Ah As"))

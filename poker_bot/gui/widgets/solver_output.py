@@ -25,6 +25,7 @@ _ACTION_COLORS = {
     ActionType.FOLD: ("#ef4444", "#fff"),
     ActionType.ALL_IN: ("#f97316", "#fff"),
     ActionType.CHECK: ("#6b7280", "#fff"),
+    ActionType.LIMP: ("#8b5cf6", "#fff"),
 }
 
 _BAR_COLORS = {
@@ -34,6 +35,7 @@ _BAR_COLORS = {
     "check": "#6b7280",
     "all_in": "#f97316",
     "allin": "#f97316",
+    "limp": "#8b5cf6",
 }
 
 
@@ -169,6 +171,8 @@ class SolverOutputPanel(QWidget):
             action_text = f"CALL {decision.amount:.1f} bb"
         elif action == ActionType.ALL_IN:
             action_text = f"ALL-IN ({decision.amount:.1f} bb)"
+        elif action == ActionType.LIMP:
+            action_text = "LIMP (call 1 bb)"
         else:
             action_text = action.value
 
@@ -205,6 +209,27 @@ class SolverOutputPanel(QWidget):
             lines.append(f"\nOpponent: {opponent_advice}")
 
         self._analysis.setText("\n".join(lines))
+
+    def show_gto_unavailable(self) -> None:
+        """Display an amber warning that no GTO solution is available."""
+        self._banner.setText("GTO SOLUTION UNAVAILABLE")
+        self._banner.setStyleSheet(
+            "QLabel { font-size: 18px; font-weight: bold; color: #92400e;"
+            " background: #fef3c7; border-radius: 8px; }"
+        )
+        self._bars.clear()
+        self._analysis.setText(
+            "External solver not configured.\n\n"
+            "Configure TexasSolver in ~/.poker_coach/solver_config.json:\n"
+            '{\n'
+            '  "solver_type": "texassolver",\n'
+            '  "binary_path": "/path/to/console_solver",\n'
+            '  "thread_count": 8,\n'
+            '  "accuracy": 0.5\n'
+            "}\n\n"
+            "Without a configured solver, postflop GTO solutions\n"
+            "cannot be computed. Preflop advice remains available."
+        )
 
     def show_error(self, message: str) -> None:
         self._banner.setText("Error")

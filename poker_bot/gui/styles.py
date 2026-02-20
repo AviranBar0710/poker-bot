@@ -32,6 +32,7 @@ QDoubleSpinBox, QSpinBox {
     border: 1px solid #d1d5db;
     border-radius: 4px;
     background: white;
+    color: #1f2937;
     min-width: 70px;
 }
 
@@ -44,7 +45,15 @@ QComboBox {
     border: 1px solid #d1d5db;
     border-radius: 4px;
     background: white;
+    color: #1f2937;
     min-width: 90px;
+}
+
+QComboBox QAbstractItemView {
+    background: white;
+    color: #1f2937;
+    selection-background-color: #2563eb;
+    selection-color: white;
 }
 
 QComboBox:focus {
@@ -61,6 +70,7 @@ QLineEdit {
     border: 1px solid #d1d5db;
     border-radius: 4px;
     background: white;
+    color: #1f2937;
 }
 
 QLineEdit:focus {

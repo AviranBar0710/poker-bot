@@ -114,6 +114,9 @@ class MainWindow(QMainWindow):
     def show_error(self, message: str) -> None:
         self._output_panel.show_error(message)
 
+    def show_gto_unavailable(self) -> None:
+        self._output_panel.show_gto_unavailable()
+
     def show_opponent_stats(
         self,
         stats: OpponentStats | None,

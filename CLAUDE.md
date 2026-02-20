@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Setup
 python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 
-# Run all tests (410 tests, ~26s)
+# Run all tests (550 tests, ~34s)
 pytest -v
 
 # Run a single test file
@@ -27,6 +27,7 @@ The poker bot is a GTO-based decision engine for Texas Hold'em (cash games and M
 
 ```
 GameState + GameContext → SolverEngine → PreflopSolver / PostflopSolver → SolverResult → DecisionMaker → Decision
+                        → ExternalSolverEngine → PreflopSolver / TexasSolverBridge → SolverResult (or GTO_UNAVAILABLE)
 ```
 
 ### Module Dependency Flow (no circular imports)
@@ -235,6 +236,70 @@ For changes to the decision engine, follow the 5-step pipeline in `.claude/workf
 | `test_stack_strategy.py` | Push/fold charts, stack adjustments | Short-stack play |
 | `test_tournament_strategy.py` | ICM calculator, range adjustments | Tournament strategy |
 | `test_game_context.py` | Cash/tournament context creation | GameContext |
+| `test_preflop_db.py` | 32 tests: PreflopDB CRUD, import, PreflopSolver with DB | Preflop DB (Phase 8a) |
+| `test_solver_bridge.py` | GTO_UNAVAILABLE, SolverConfig, range conversion | External bridge types |
+| `test_texas_solver.py` | Input generation, output parsing, subprocess mocks | TexasSolver adapter |
+| `test_external_engine.py` | Zero-heuristic routing, SolverProtocol, ICM | ExternalSolverEngine |
+
+## External GTO Solver Integration (Phase 8b)
+
+### Zero-Heuristic Mandate
+
+**CRITICAL ARCHITECTURAL PRINCIPLE**: This bot is a pure GTO data relay. Every postflop decision MUST come from a real CFR (Counterfactual Regret Minimization) solver. If the solver is unavailable, the system returns `GTO_UNAVAILABLE` — it does NOT guess, estimate, or use heuristic tables.
+
+- No fallback to heuristic PostflopSolver for ExternalSolverEngine
+- No "human logic" or hand-tuned frequency tables
+- Bad advice that loses money is worse than no advice
+- GUI displays explicit "GTO SOLUTION UNAVAILABLE" warning when solver is not configured
+
+### Architecture
+
+```
+ExternalSolverEngine (SolverProtocol)
+  ├── PREFLOP → PreflopSolver (Phase 8a SQLite DB)
+  └── POSTFLOP → SolverBridge (ABC)
+                    └── TexasSolverBridge → subprocess → CFR output
+                    └── (future: PioSolverBridge)
+                    └── (if unavailable) → GTO_UNAVAILABLE sentinel
+```
+
+### File Structure
+
+```
+poker_bot/solver/external/
+    __init__.py
+    bridge.py              # SolverBridge ABC, SolverConfig, SolverInput/Output, GTO_UNAVAILABLE
+    range_converter.py     # Range → TexasSolver/PioSolver format conversion
+    texas_solver.py        # TexasSolverBridge: file-based subprocess I/O
+poker_bot/solver/
+    external_engine.py     # ExternalSolverEngine (SolverProtocol implementation)
+tests/
+    test_solver_bridge.py  # Range conversion, config loading, GTO_UNAVAILABLE sentinel
+    test_texas_solver.py   # TexasSolverBridge with mocked subprocess
+    test_external_engine.py # Zero-heuristic routing verification
+```
+
+### Key Types
+
+- `GTO_UNAVAILABLE`: `SolverResult(strategy=StrategyNode(actions=[]), source="gto_unavailable", confidence=0.0)` — returned when solver is absent/fails
+- `SolverBridge` (ABC): `is_available()`, `solve(SolverInput) → SolverOutput`, `cleanup()`
+- `SolverConfig`: loaded from `~/.poker_coach/solver_config.json`
+- `ExternalSolverEngine`: implements `SolverProtocol`, routes preflop to PreflopSolver, postflop to bridge
+
+### Configuration
+
+`~/.poker_coach/solver_config.json`:
+```json
+{
+    "solver_type": "texassolver",
+    "binary_path": "/path/to/console_solver",
+    "thread_count": 8,
+    "accuracy": 0.5,
+    "max_solve_seconds": 60
+}
+```
+
+If absent: preflop works normally, postflop returns `GTO_UNAVAILABLE`.
 
 ## Known Limitations
 

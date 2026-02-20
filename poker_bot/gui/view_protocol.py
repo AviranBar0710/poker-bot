@@ -87,6 +87,10 @@ class PokerView(Protocol):
         """Update the opponent HUD panel with stats and notes."""
         ...
 
+    def show_gto_unavailable(self) -> None:
+        """Display a warning that no GTO solution is available."""
+        ...
+
     def clear_result(self) -> None:
         """Clear the solver output panel."""
         ...

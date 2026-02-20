@@ -57,6 +57,7 @@ class ActionType(StrEnum):
     CALL = "CALL"
     RAISE = "RAISE"
     ALL_IN = "ALL_IN"
+    LIMP = "LIMP"
 
 
 @dataclass(frozen=True)
@@ -1088,7 +1089,7 @@ def _clamp_decision(
     """
     amount = decision.amount
 
-    if decision.action in (ActionType.FOLD, ActionType.CHECK):
+    if decision.action in (ActionType.FOLD, ActionType.CHECK, ActionType.LIMP):
         return decision
 
     # Clamp to stack, never negative
@@ -1142,6 +1143,7 @@ def _solver_result_to_decision(solver_result) -> Decision:
         "fold": ActionType.FOLD,
         "check": ActionType.CHECK,
         "all_in": ActionType.ALL_IN,
+        "limp": ActionType.LIMP,
     }
     action = action_map.get(rec.action, ActionType.FOLD)
 

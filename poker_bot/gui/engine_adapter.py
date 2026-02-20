@@ -15,6 +15,8 @@ from poker_bot.core.game_context import GameContext
 from poker_bot.core.game_state import GameState
 from poker_bot.solver.data_structures import SolverResult
 from poker_bot.solver.engine import SolverEngine
+from poker_bot.solver.external.bridge import load_solver_config
+from poker_bot.solver.external_engine import ExternalSolverEngine
 from poker_bot.strategy.decision_maker import Decision, DecisionMaker, PriorAction
 
 
@@ -49,7 +51,13 @@ class SolverWorker(QObject):
 
     def __init__(self) -> None:
         super().__init__()
-        self._solver = SolverEngine()
+        # Try ExternalSolverEngine first (zero-heuristic, real CFR solver).
+        # Falls back to built-in SolverEngine if no external config found.
+        config = load_solver_config()
+        if config is not None:
+            self._solver = ExternalSolverEngine(config=config)
+        else:
+            self._solver = ExternalSolverEngine()  # No bridge, GTO_UNAVAILABLE for postflop
         self._maker = DecisionMaker(solver=self._solver)
         self.solve_requested.connect(self._do_solve)
 
@@ -103,6 +111,8 @@ class EngineAdapter(QObject):
         self.solving_error.emit(message)
 
     def shutdown(self) -> None:
-        """Stop the worker thread."""
+        """Stop the worker thread and release solver resources."""
         self._thread.quit()
         self._thread.wait()
+        if hasattr(self._worker._solver, 'cleanup'):
+            self._worker._solver.cleanup()

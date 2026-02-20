@@ -119,6 +119,11 @@ class GUIPresenter:
         decision = response.decision
         solver_result = response.solver_result
 
+        # Check for GTO_UNAVAILABLE — show warning instead of fake result
+        if solver_result is not None and solver_result.source == "gto_unavailable":
+            self._view.show_gto_unavailable()
+            return
+
         # Build hero cards display string
         hero_card_strs = self._view.get_hero_cards()
         try:

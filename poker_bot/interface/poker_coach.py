@@ -289,6 +289,8 @@ def _print_recommendation(
         action_str = f"CALL {decision.amount:.1f} bb"
     elif decision.action == ActionType.ALL_IN:
         action_str = f"ALL-IN ({decision.amount:.1f} bb)"
+    elif decision.action == ActionType.LIMP:
+        action_str = "LIMP (call 1 bb)"
     else:
         action_str = decision.action.value
 
@@ -398,6 +400,7 @@ def _live_coaching(tracker: OpponentTracker) -> None:
 _ACTION_RANK = {
     ActionType.FOLD: 0,
     ActionType.CHECK: 1,
+    ActionType.LIMP: 1,
     ActionType.CALL: 2,
     ActionType.RAISE: 3,
     ActionType.ALL_IN: 4,
