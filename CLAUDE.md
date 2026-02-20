@@ -242,4 +242,52 @@ For changes to the decision engine, follow the 5-step pipeline in `.claude/workf
 
 ---
 
-## NEXT PHASE: Build a Graphical User Interface (GUI) for live play integration.
+## GUI (Phase 7)
+
+PySide6 desktop interface for live play. Launch with:
+
+```bash
+python -m poker_bot.gui.main
+```
+
+### Architecture: MVP (Model-View-Presenter)
+
+```
+MainWindow (PySide6, implements PokerView Protocol)
+  ↕ signals
+GUIPresenter (framework-agnostic, no Qt imports)
+  ↕
+EngineAdapter (QThread + SolverWorker) → DecisionMaker/SolverEngine
+OpponentTracker (existing SQLite backend)
+```
+
+**Swappability**: `GUIPresenter` depends only on `PokerView` Protocol, never on PySide6. To switch frameworks, implement `PokerView` with new widgets.
+
+### File Structure
+
+```
+poker_bot/
+  interface/
+    situation_builder.py     # Pure build_game_objects() — shared by CLI and GUI
+  gui/
+    main.py                  # Entry point: QApplication wiring
+    main_window.py           # MainWindow(QMainWindow) implements PokerView
+    presenter.py             # GUIPresenter — framework-agnostic
+    engine_adapter.py        # SolverWorker(QObject) + EngineAdapter with QThread
+    view_protocol.py         # PokerView(Protocol)
+    styles.py                # QSS stylesheet constants
+    widgets/
+      card_picker.py         # CardPickerPopup(QDialog) + CardSlotButton
+      input_panel.py         # InputPanel: card buttons, spinboxes, dropdowns
+      solver_output.py       # SolverOutputPanel + StrategyBarChart
+      opponent_hud.py        # OpponentHudPanel: debounced villain lookup + stats
+```
+
+### Threading
+
+MC equity calculations run on a background `QThread` via `SolverWorker.moveToThread()`. Signals auto-marshal results to the main thread — no locking, no polling, no UI freeze.
+
+### Testing
+
+- `test_situation_builder.py`: unit tests for `build_game_objects()`
+- `test_gui_presenter.py`: presenter tests with mock `PokerView` (no Qt needed)

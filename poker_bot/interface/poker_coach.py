@@ -51,6 +51,7 @@ from poker_bot.core.game_context import (
 from poker_bot.core.game_state import GameState, PlayerState
 from poker_bot.core.hand_evaluator import HandEvaluator
 from poker_bot.interface.opponent_tracker import OpponentTracker
+from poker_bot.interface.situation_builder import build_game_objects
 from poker_bot.solver.engine import SolverEngine
 from poker_bot.strategy.decision_maker import (
     ActionType,
@@ -225,42 +226,10 @@ def _build_situation(big_blind_chips: float = 2.0) -> tuple[GameState, GameConte
     # Opponents
     num_opponents = _prompt_int("Number of opponents", 2)
 
-    # Build game state (amounts in bb — use bb as chip unit)
-    hero = PlayerState(
-        name="Hero",
-        chips=stack_bb,
-        position=position,
-        hole_cards=hero_cards,
-        is_active=True,
-    )
-    # Set hero's current_bet for blind positions
-    if position == Position.BB and street == Street.PREFLOP and current_bet_bb <= 1.0:
-        hero.current_bet = 1.0  # Already posted BB
-    elif position == Position.SB and street == Street.PREFLOP:
-        hero.current_bet = 0.5  # Already posted SB
-
-    players = [hero]
-    villain_positions = [p for p in [Position.UTG, Position.MP, Position.CO, Position.BTN, Position.SB, Position.BB] if p != position]
-    for i in range(num_opponents):
-        players.append(PlayerState(
-            name=f"Villain{i+1}",
-            chips=stack_bb,  # Assume similar stacks
-            position=villain_positions[i % len(villain_positions)],
-            hole_cards=[],
-            is_active=True,
-        ))
-
-    gs = GameState(
-        players=players,
-        small_blind=0.5,
-        big_blind=1.0,
-        pot=pot_bb,
-        current_bet=current_bet_bb,
-        current_street=street,
-        community_cards=community_cards,
-    )
-
-    # Build context
+    # Tournament-specific prompts
+    tournament_phase = None
+    players_left = 0
+    total_entries = 0
     if is_tournament:
         phase_str = _prompt("Tournament phase (early/middle/bubble/itm/final_table)", "middle").lower()
         phase_map = {
@@ -270,28 +239,24 @@ def _build_situation(big_blind_chips: float = 2.0) -> tuple[GameState, GameConte
             "itm": TournamentPhase.IN_THE_MONEY,
             "final_table": TournamentPhase.FINAL_TABLE,
         }
-        phase = phase_map.get(phase_str, TournamentPhase.MIDDLE)
+        tournament_phase = phase_map.get(phase_str, TournamentPhase.MIDDLE)
         players_left = _prompt_int("Players remaining", 50)
         total_entries = _prompt_int("Total entries", 100)
 
-        # Simple payout structure
-        payout = PayoutStructure(
-            total_prize_pool=total_entries * 10.0,
-            payouts={1: 0.25, 2: 0.15, 3: 0.10, 4: 0.08, 5: 0.06},
-            total_entries=total_entries,
-        )
-        ctx = GameContext.tournament(
-            stack_bb=stack_bb,
-            phase=phase,
-            players_remaining=players_left,
-            payout_structure=payout,
-            num_players=num_opponents + 1,
-        )
-    else:
-        ctx = GameContext.cash_game(
-            stack_bb=stack_bb,
-            num_players=num_opponents + 1,
-        )
+    gs, ctx = build_game_objects(
+        hero_cards=hero_cards,
+        position=position,
+        stack_bb=stack_bb,
+        street=street,
+        pot_bb=pot_bb,
+        current_bet_bb=current_bet_bb,
+        num_opponents=num_opponents,
+        community_cards=community_cards,
+        is_tournament=is_tournament,
+        tournament_phase=tournament_phase,
+        players_remaining=players_left,
+        total_entries=total_entries,
+    )
 
     return gs, ctx, 0, action_history
 
