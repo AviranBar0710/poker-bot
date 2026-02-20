@@ -71,5 +71,4 @@ For changes to the decision engine, follow the 5-step pipeline in `.claude/workf
 
 ## Known limitations
 
-- No pure bluffing or trapping/slow-play logic in PostflopEngine
 - `Range.contains()` is O(n*m) per check — no combo caching yet

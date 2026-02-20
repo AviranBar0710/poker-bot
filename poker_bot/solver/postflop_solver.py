@@ -193,12 +193,18 @@ class PostflopSolver:
             hand_category=hand_category,
         )
 
+        texture_type = _board_bucket_type(board_bucket)
+        action_seq = self._action_seq(action_history)
+
         # Try pre-computed lookup
         node = self._lookup(board_bucket, position.value, hand_category, spr_bucket)
         if node is not None:
             # Convert sizing fractions to actual amounts
             node = self._resolve_amounts(node, pot, hero_stack, big_blind, board_bucket)
             node = self._apply_position_adjustment(node, is_ip, hand_category)
+            node = self._apply_bluff_trap_adjustment(
+                node, hand_category, texture_type, street, is_ip, action_seq,
+            )
             if num_opponents >= 2:
                 node = self._apply_multiway_adjustment(node, num_opponents, hand_category)
             if opponent_stats is not None:
@@ -229,6 +235,9 @@ class PostflopSolver:
                 pass
 
         node = self._apply_position_adjustment(node, is_ip, hand_category)
+        node = self._apply_bluff_trap_adjustment(
+            node, hand_category, texture_type, street, is_ip, action_seq,
+        )
         if num_opponents >= 2:
             node = self._apply_multiway_adjustment(node, num_opponents, hand_category)
         if opponent_stats is not None:
@@ -367,6 +376,90 @@ class PostflopSolver:
                     amount *= 1.15
                 elif af.action == "fold":
                     freq *= 1.10
+
+            adjusted.append(ActionFrequency(af.action, freq, amount, af.ev))
+
+        return StrategyNode(actions=adjusted).normalized()
+
+    @staticmethod
+    def _apply_bluff_trap_adjustment(
+        node: StrategyNode,
+        hand_category: str,
+        texture_type: str,
+        street: str,
+        is_ip: bool,
+        action_seq: str,
+    ) -> StrategyNode:
+        """Apply bluffing, trapping, and check-raise adjustments.
+
+        Modulates raise/check frequencies to create balanced bluff lines,
+        slow-play traps on static boards, and polarized OOP check-raises.
+
+        Args:
+            node: Current strategy node.
+            hand_category: Hero's hand category.
+            texture_type: Board texture ("dry", "wet", "monotone", "paired").
+            street: Current street ("flop", "turn", "river").
+            is_ip: Whether hero is in position.
+            action_seq: Action sequence ("first_to_act", "checked", "bet", etc.).
+        """
+        # Street-based bluff scaling: bluffs decrease as pot grows
+        street_bluff_scale = {"flop": 1.0, "turn": 0.85, "river": 0.70}.get(street, 1.0)
+        # Street-based trap scaling: trap less on later streets (need to build pot)
+        street_trap_scale = {"flop": 1.0, "turn": 0.70, "river": 0.40}.get(street, 1.0)
+
+        # Board texture multipliers for bluffing
+        texture_bluff_mult = {
+            "dry": 1.40, "paired": 1.30, "wet": 0.70, "monotone": 0.60,
+        }.get(texture_type, 1.0)
+
+        # Whether this is a spot where trapping makes sense
+        # (we haven't faced a bet — checking is an option, not a forced action)
+        can_trap = action_seq in ("first_to_act", "checked")
+        # Static boards where our hand is safe from draws
+        is_static = texture_type in ("dry", "paired")
+
+        # Whether we're facing a bet (check-raise candidate)
+        facing_bet = action_seq == "bet"
+
+        # Compute the raise-to-check transfer amount for trapping
+        trap_transfer = 0.0
+        if can_trap and is_static and hand_category in ("nuts", "strong_made"):
+            # Transfer 15-25% of raise freq to check on static boards
+            base_transfer = 0.20 if hand_category == "nuts" else 0.15
+            trap_transfer = base_transfer * street_trap_scale
+
+        adjusted = []
+        for af in node.actions:
+            freq = af.frequency
+            amount = af.amount
+
+            if af.action == "raise":
+                if hand_category in ("air", "weak_draw"):
+                    # --- Bluffing adjustments ---
+                    freq *= texture_bluff_mult * street_bluff_scale
+                    # Extra bluff bonus IP (info advantage for barrel selection)
+                    if is_ip:
+                        freq *= 1.10
+                    # OOP check-raise bluff: boost raise when facing a bet
+                    if not is_ip and facing_bet and is_static:
+                        freq *= 1.30
+                elif hand_category in ("nuts", "strong_made"):
+                    # --- Trapping: reduce raise, shift to check ---
+                    if trap_transfer > 0:
+                        freq *= (1.0 - trap_transfer)
+                    # OOP check-raise for value: boost raise when facing a bet
+                    if not is_ip and facing_bet:
+                        freq *= 1.25
+
+            elif af.action == "check":
+                if hand_category in ("nuts", "strong_made") and trap_transfer > 0:
+                    # Receive the transferred frequency from raise
+                    # Find current raise freq to compute absolute transfer
+                    raise_freq = sum(
+                        a.frequency for a in node.actions if a.action == "raise"
+                    )
+                    freq += raise_freq * trap_transfer
 
             adjusted.append(ActionFrequency(af.action, freq, amount, af.ev))
 

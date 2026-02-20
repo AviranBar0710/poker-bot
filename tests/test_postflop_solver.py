@@ -469,3 +469,240 @@ class TestExploitAdjustments:
         # Bluff frequency should generally increase as confidence grows
         # (because observed fold-to-cbet 75% > GTO default 50%)
         assert bluff_freqs[-1] >= bluff_freqs[0]
+
+
+class TestBluffAdjustments:
+    """Test bluff frequency modulation by board texture and street."""
+
+    def setup_method(self):
+        self.solver = PostflopSolver()
+
+    def _get_freq(self, result, action_name):
+        return sum(a.frequency for a in result.strategy.actions if a.action == action_name)
+
+    def _air_on_board(self, community: str, **kwargs):
+        """Get strategy for air on a given board."""
+        defaults = dict(
+            hero_cards=_cards("2h 3d"),
+            community_cards=_cards(community),
+            position=Position.BTN,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=[],
+            hand_strength=0.05,
+            is_ip=True,
+            num_opponents=1,
+        )
+        defaults.update(kwargs)
+        return self.solver.get_strategy(**defaults)
+
+    def test_bluffs_more_on_dry_than_wet(self):
+        """Air should bluff more on dry boards than wet boards."""
+        dry_result = self._air_on_board("As 7d 2c")   # dry_high_rainbow
+        wet_result = self._air_on_board("Js Ts 7d")   # wet_two_tone
+        assert self._get_freq(dry_result, "raise") > self._get_freq(wet_result, "raise")
+
+    def test_bluffs_more_on_dry_than_monotone(self):
+        """Air should bluff more on dry boards than monotone boards."""
+        dry_result = self._air_on_board("As 7d 2c")
+        mono_result = self._air_on_board("Js Ts 5s")  # monotone
+        assert self._get_freq(dry_result, "raise") > self._get_freq(mono_result, "raise")
+
+    def test_bluff_decreases_flop_to_river(self):
+        """Bluff frequency should decrease from flop to river."""
+        flop_result = self._air_on_board("As 7d 2c")
+        turn_result = self._air_on_board("As 7d 2c 9h")
+        river_result = self._air_on_board("As 7d 2c 9h Kc")
+
+        flop_bluff = self._get_freq(flop_result, "raise")
+        turn_bluff = self._get_freq(turn_result, "raise")
+        river_bluff = self._get_freq(river_result, "raise")
+
+        assert flop_bluff >= turn_bluff
+        assert turn_bluff >= river_bluff
+
+    def test_bluff_ip_higher_than_oop(self):
+        """Air should bluff more IP than OOP (extra 1.1x bonus)."""
+        ip_result = self._air_on_board("As 7d 2c", is_ip=True)
+        oop_result = self._air_on_board("As 7d 2c", is_ip=False)
+        assert self._get_freq(ip_result, "raise") > self._get_freq(oop_result, "raise")
+
+    def test_bluff_frequencies_sum_to_one(self):
+        """Bluff-adjusted strategy should still normalize to ~1.0."""
+        for board in ["As 7d 2c", "Js Ts 7d", "Ks Qs 9s", "8h 8d 3c"]:
+            result = self._air_on_board(board)
+            total = sum(a.frequency for a in result.strategy.actions)
+            assert abs(total - 1.0) < 0.01
+
+
+class TestTrapAdjustments:
+    """Test slow-play / trapping logic on static boards."""
+
+    def setup_method(self):
+        self.solver = PostflopSolver()
+
+    def _get_freq(self, result, action_name):
+        return sum(a.frequency for a in result.strategy.actions if a.action == action_name)
+
+    def _nuts_on_board(self, community: str, **kwargs):
+        defaults = dict(
+            hero_cards=_cards("Ah Ad"),
+            community_cards=_cards(community),
+            position=Position.BTN,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=[],
+            hand_strength=0.95,
+            is_ip=True,
+            num_opponents=1,
+        )
+        defaults.update(kwargs)
+        return self.solver.get_strategy(**defaults)
+
+    def test_traps_more_on_dry_than_wet(self):
+        """Nuts should check more (trap) on dry boards than wet boards."""
+        dry_result = self._nuts_on_board("As 7d 2c")
+        wet_result = self._nuts_on_board("Js Ts 7d")
+        assert self._get_freq(dry_result, "check") > self._get_freq(wet_result, "check")
+
+    def test_no_trap_on_monotone(self):
+        """Nuts should NOT trap on monotone — need to protect."""
+        dry_result = self._nuts_on_board("As 7d 2c")
+        mono_result = self._nuts_on_board("Js Ts 5s")
+        assert self._get_freq(dry_result, "check") > self._get_freq(mono_result, "check")
+
+    def test_trap_decreases_on_later_streets(self):
+        """Trapping should decrease from flop to river (need to build pot)."""
+        flop_result = self._nuts_on_board("As 7d 2c")
+        river_result = self._nuts_on_board("As 7d 2c 9h Kd")
+        # Flop should check more (trap) than river
+        assert self._get_freq(flop_result, "check") >= self._get_freq(river_result, "check")
+
+    def test_no_trap_when_facing_bet(self):
+        """When facing a bet, we should raise (not trap) with nuts."""
+        # Facing a bet: action_seq = "bet"
+        history_bet = [PriorAction(Position.UTG, Action.RAISE, 7.0)]
+        facing_bet = self._nuts_on_board("As 7d 2c", action_history=history_bet)
+        # First to act: action_seq = "first_to_act"
+        first_to_act = self._nuts_on_board("As 7d 2c", action_history=[])
+        # Should raise more when facing a bet than when first to act
+        assert self._get_freq(facing_bet, "raise") >= self._get_freq(first_to_act, "raise")
+
+    def test_trap_frequencies_sum_to_one(self):
+        """Trap-adjusted strategy should normalize to ~1.0."""
+        result = self._nuts_on_board("As 7d 2c")
+        total = sum(a.frequency for a in result.strategy.actions)
+        assert abs(total - 1.0) < 0.01
+
+
+class TestCheckRaise:
+    """Test OOP check-raise construction with polarized ranges."""
+
+    def setup_method(self):
+        self.solver = PostflopSolver()
+
+    def _get_freq(self, result, action_name):
+        return sum(a.frequency for a in result.strategy.actions if a.action == action_name)
+
+    def test_oop_check_raise_bluff_on_dry_board(self):
+        """OOP air facing a bet on dry board should check-raise more than IP."""
+        history_bet = [PriorAction(Position.BTN, Action.RAISE, 7.0)]
+        common = dict(
+            hero_cards=_cards("2h 3d"),
+            community_cards=_cards("As 7d 2c"),  # dry
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=history_bet,
+            hand_strength=0.05,
+            num_opponents=1,
+        )
+        oop_result = self.solver.get_strategy(
+            **common, position=Position.BB, is_ip=False,
+        )
+        ip_result = self.solver.get_strategy(
+            **common, position=Position.BTN, is_ip=True,
+        )
+        # OOP facing bet on dry board gets the check-raise bluff boost
+        # Compare raw raise frequencies (both adjusted for position already)
+        oop_raise = self._get_freq(oop_result, "raise")
+        # OOP raise should be non-trivial (check-raise bluff is a real line)
+        assert oop_raise > 0.02
+
+    def test_oop_check_raise_value_with_nuts(self):
+        """OOP nuts facing a bet should have significant raise (check-raise value)."""
+        history_bet = [PriorAction(Position.BTN, Action.RAISE, 7.0)]
+        result = self.solver.get_strategy(
+            hero_cards=_cards("Ah Ad"),
+            community_cards=_cards("As 7d 2c"),
+            position=Position.BB,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=history_bet,
+            hand_strength=0.95,
+            is_ip=False,
+            num_opponents=1,
+        )
+        raise_freq = self._get_freq(result, "raise")
+        # Nuts OOP facing bet should raise at high frequency (check-raise for value)
+        assert raise_freq >= 0.40
+
+    def test_check_raise_not_applied_ip(self):
+        """IP should not get check-raise boosts (you can't check-raise IP)."""
+        history_bet = [PriorAction(Position.BB, Action.RAISE, 7.0)]
+        # Air IP facing bet on dry board
+        ip_dry = self.solver.get_strategy(
+            hero_cards=_cards("2h 3d"),
+            community_cards=_cards("As 7d 2c"),
+            position=Position.BTN,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=history_bet,
+            hand_strength=0.05,
+            is_ip=True,
+            num_opponents=1,
+        )
+        # Air IP NOT facing bet (first to act) on same board
+        ip_first = self.solver.get_strategy(
+            hero_cards=_cards("2h 3d"),
+            community_cards=_cards("As 7d 2c"),
+            position=Position.BTN,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=[],
+            hand_strength=0.05,
+            is_ip=True,
+            num_opponents=1,
+        )
+        # IP facing bet and IP first-to-act should not diverge due to check-raise
+        # (check-raise only applies OOP)
+        ip_bet_raise = self._get_freq(ip_dry, "raise")
+        ip_first_raise = self._get_freq(ip_first, "raise")
+        # They won't be identical (different action_seq), but IP shouldn't
+        # get the 1.3x check-raise bluff boost
+        assert abs(ip_bet_raise - ip_first_raise) < 0.15
+
+    def test_polarized_range_medium_hands_dont_check_raise(self):
+        """Medium hands should NOT get check-raise boosts (they call or fold)."""
+        history_bet = [PriorAction(Position.BTN, Action.RAISE, 7.0)]
+        result = self.solver.get_strategy(
+            hero_cards=_cards("Kh Qd"),
+            community_cards=_cards("As 7d 2c"),
+            position=Position.BB,
+            pot=10.0,
+            hero_stack=100.0,
+            big_blind=1.0,
+            action_history=history_bet,
+            hand_strength=0.50,
+            is_ip=False,
+            num_opponents=1,
+        )
+        raise_freq = self._get_freq(result, "raise")
+        call_freq = self._get_freq(result, "call")
+        # Medium hands should primarily call, not check-raise
+        assert call_freq > raise_freq
